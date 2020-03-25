@@ -1,0 +1,200 @@
+/* ----------HEADER---------- */
+
+/* -----SITE-HEADER----- */
+
+.site-header {
+    background: rgb(218, 218, 218);
+    box-shadow: 0 0 5px;
+}
+
+.site-header .container {
+    max-width: 100%;
+}
+
+.site-header a {
+    text-decoration: none;
+}
+
+
+.site-header h4 {
+    color:  rgb(134, 134, 134);
+}
+
+
+
+/* -----LOGO-HEADER----- */
+
+.main-logo {
+    padding: 10px;
+    width: 9%;
+    float: left;
+    margin: 0 40px;
+}
+
+.main-logo img {
+    width: 100%;
+}
+
+.new-logo img{
+    padding: 15px;
+}
+
+
+/* -----SEARCH-HEADER----- */
+
+.main-search {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 146px;
+    width: 86%;
+    float: left;
+    position: relative;
+    margin-left: 40px;
+}
+
+.main-search .form-control {
+    width: 100%;
+    border: 1px solid rgb(190, 190, 190);
+    box-shadow: 0 0 2px black;
+}
+
+.main-search .form-control:focus {
+    color: #495057;
+    background-color: #fff;
+    border-color: #9c9c9c;
+    box-shadow: 0 0 5px black;
+}
+
+.main-search .btn-search {
+    right: 0;
+    position: absolute;
+    border: none;
+}
+
+/* -----AUTH----- */
+
+.autentification {
+    width: 13%;
+    float: right;
+    border-left: 1px solid rgb(211, 211, 211);
+}
+
+.autentification:hover {
+    background: #fff;
+    cursor: pointer;
+    box-shadow: 0 0 5px rgb(241, 241, 241);
+}
+
+.autentification h4 {
+    line-height: 95px;
+    font-weight: bold;
+}
+
+/* -----BASKET----- */
+
+.basket {
+    width: 13%;
+    float: right;
+    margin-right: -15px;
+    border-left: 1px solid rgb(211, 211, 211);
+}
+
+.basket:hover {
+    background: #fff;
+    cursor: pointer;
+    box-shadow: 0 0 5px rgb(241, 241, 241);
+}
+
+.basket h4 {
+    line-height: 95px;
+    font-weight: bold;
+}
+
+/* -----CONTACT----- */
+
+.contact {
+    width: 13%;
+    float: right;
+    border-left: 1px solid rgb(211, 211, 211);
+}
+
+.contact:hover {
+    background: #fff;
+    cursor: pointer;
+    box-shadow: 0 0 5px rgb(241, 241, 241);
+}
+
+.contact h4 {
+    line-height: 95px;
+    font-weight: bold;
+}
+
+/* -----BUTTON----- */
+
+.buttons-header {
+    display: -ms-inline-flexbox;
+    display: -webkit-inline-flex;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-content: flex-start;
+    align-items: center;
+}
+
+.buttons-header button:hover {
+    background: #000;
+    color: white;
+}
+
+.btn-auth {
+    font-weight: bold;
+    background: #fff;
+    margin: 0 22px;
+    height: 38px;
+    border-radius: 4px;
+    border: 1px solid rgb(190, 190, 190);
+    box-shadow: 0 0 2px black;
+    order: 0;
+    flex: 0 1 auto;
+    align-self: auto;
+}
+
+.btn-contact {
+    font-weight: bold;
+    background: #fff;
+    margin: 0 22px;
+    height: 38px;
+    border-radius: 4px;
+    border: 1px solid rgb(190, 190, 190);
+    box-shadow: 0 0 2px black;
+    -webkit-order: 0;
+    -ms-flex-order: 0;
+    order: 0;
+    -webkit-flex: 0 1 auto;
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto;
+    -webkit-align-self: auto;
+    -ms-flex-item-align: auto;
+    align-self: auto;
+}
+
+.btn-basket {
+    font-weight: bold;
+    background: #fff;
+    margin: 0 22px;
+    height: 38px;
+    border-radius: 4px;
+    border: 1px solid rgb(190, 190, 190);
+    box-shadow: 0 0 2px black;
+    -webkit-order: 0;
+    -ms-flex-order: 0;
+    order: 0;
+    -webkit-flex: 0 1 auto;
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto;
+    -webkit-align-self: auto;
+    -ms-flex-item-align: auto;
+    align-self: auto;
+}
