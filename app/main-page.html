@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PhoneOFF</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/main-page.css">
+
+
+    <script src="https://kit.fontawesome.com/34229d98c9.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <header class="header">
+            <div class="container">
+                <div class="header__row">
+                    <div class="header__search">
+                        <form class="header__form">
+                            <input class="header__search-input" type="search" placeholder="Поиск">
+                            <button type="submit" class="header__search-button"><i class=" fas fa-search"></i></button>
+                        </form>
+                    </div>
+                    <div class="header__logo">
+                        <img src="image/logo2.png" alt="">
+                    </div>
+                    <div class="header__buttons">
+                        <a class="header__button" href="#">Войти</a>
+                        <a class="header__button" href="#">Контакты</a>
+                        <a class="header__button" href="#">Корзина</a>
+                    </div>
+                </div>
+        </header>
+
+        <main class="catalog">
+            <div class="container">
+                <div class="catalog__row">
+                    <div class="catalog__min-block">
+                        <div class="catalog__filter filter">
+                            <div class="filter__block">
+                                <div class="filter__title">Бренд</div>
+                                <div class="filter__body">
+                                    <div class="filter__checkbox">
+                                        <input type="checkbox" class="filter__checkbox-input" id="option1">
+                                        <label class="filter__checkbox-text" for="option1">Apple</label>
+                                    </div>
+                                    <div class="filter__checkbox">
+                                        <input type="checkbox" class="filter__checkbox-input" id="option2">
+                                        <label class="filter__checkbox-text" for="option2">Samsung</label>
+                                    </div>
+                                    <div class="filter__checkbox">
+                                        <input type="checkbox" class="filter__checkbox-input" id="option3">
+                                        <label class="filter__checkbox-text" for="option3">Huawei</label>
+                                    </div>
+                                    <div class="filter__checkbox">
+                                        <input type="checkbox" class="filter__checkbox-input" id="option4">
+                                        <label class="filter__checkbox-text" for="option4">Sony</label>
+                                    </div>
+                                    <div class="filter__checkbox">
+                                        <input type="checkbox" class="filter__checkbox-input" id="option5">
+                                        <label class="filter__checkbox-text" for="option5">Honor</label>
+                                    </div>
+                                    <div class="filter__checkbox">
+                                        <input type="checkbox" class="filter__checkbox-input" id="option6">
+                                        <label class="filter__checkbox-text" for="option6">Oppo</label>
+                                    </div>
+                                    <div class="filter__checkbox">
+                                        <input type="checkbox" class="filter__checkbox-input" id="option7">
+                                        <label class="filter__checkbox-text" for="option7">Xiaomi</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="filter__block">
+                                <div class="filter__title">Оперативная память</div>
+                                <div class="filter__body">
+                                    <div class="filter__checkbox">
+                                        <input type="checkbox" class="filter__checkbox-input" id="option8">
+                                        <label class="filter__checkbox-text" for="option8">1 Гб</label>
+                                    </div>
+                                    <div class="filter__checkbox">
+                                        <input type="checkbox" class="filter__checkbox-input" id="option9">
+                                        <label class="filter__checkbox-text" for="option9">2 Гб</label>
+                                    </div>
+                                    <div class="filter__checkbox">
+                                        <input type="checkbox" class="filter__checkbox-input" id="option10">
+                                        <label class="filter__checkbox-text" for="option10">3 Гб</label>
+                                    </div>
+                                    <div class="filter__checkbox">
+                                        <input type="checkbox" class="filter__checkbox-input" id="option11">
+                                        <label class="filter__checkbox-text" for="option11">4 Гб</label>
+                                    </div>
+                                    <div class="filter__checkbox">
+                                        <input type="checkbox" class="filter__checkbox-input" id="option12">
+                                        <label class="filter__checkbox-text" for="option12">6 Гб</label>
+                                    </div>
+                                    <div class="filter__checkbox">
+                                        <input type="checkbox" class="filter__checkbox-input" id="option13">
+                                        <label class="filter__checkbox-text" for="option13">8 Гб</label>
+                                    </div>
+                                    <div class="filter__checkbox">
+                                        <input type="checkbox" class="filter__checkbox-input" id="option14">
+                                        <label class="filter__checkbox-text" for="option14">12 Гб</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="filter__block">
+                                <div class="filter__title">Встроенная память</div>
+                                <div class="filter__body">
+                                    <div class="filter__checkbox">
+                                        <input type="checkbox" class="filter__checkbox-input" id="option15">
+                                        <label class="filter__checkbox-text" for="option15">от 4 Гб</label>
+                                    </div>
+                                    <div class="filter__checkbox">
+                                        <input type="checkbox" class="filter__checkbox-input" id="option16">
+                                        <label class="filter__checkbox-text" for="option16">16 Гб</label>
+                                    </div>
+                                    <div class="filter__checkbox">
+                                        <input type="checkbox" class="filter__checkbox-input" id="option17">
+                                        <label class="filter__checkbox-text" for="option17">32 Гб</label>
+                                    </div>
+                                    <div class="filter__checkbox">
+                                        <input type="checkbox" class="filter__checkbox-input" id="option18">
+                                        <label class="filter__checkbox-text" for="option18">64 Гб</label>
+                                    </div>
+                                    <div class="filter__checkbox">
+                                        <input type="checkbox" class="filter__checkbox-input" id="option19">
+                                        <label class="filter__checkbox-text" for="option19">128 Гб</label>
+                                    </div>
+                                    <div class="filter__checkbox">
+                                        <input type="checkbox" class="filter__checkbox-input" id="option20">
+                                        <label class="filter__checkbox-text" for="option20">256 Гб</label>
+                                    </div>
+                                    <div class="filter__checkbox">
+                                        <input type="checkbox" class="filter__checkbox-input" id="option21">
+                                        <label class="filter__checkbox-text" for="option21">512 Гб</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="filter__block">
+                                <div class="filter__title">Диагональ экрана</div>
+                                <div class="filter__body">
+                                    <div class="filter__checkbox">
+                                        <input type="checkbox" class="filter__checkbox-input" id="option22">
+                                        <label class="filter__checkbox-text" for="option22">от 10 до 12.6</label>
+                                    </div>
+                                    <div class="filter__checkbox">
+                                        <input type="checkbox" class="filter__checkbox-input" id="option23">
+                                        <label class="filter__checkbox-text" for="option23">от 13 до 14.4</label>
+                                    </div>
+                                    <div class="filter__checkbox">
+                                        <input type="checkbox" class="filter__checkbox-input" id="option24">
+                                        <label class="filter__checkbox-text" for="option24">от 15 до 16.4</label>
+                                    </div>
+                                    <div class="filter__checkbox">
+                                        <input type="checkbox" class="filter__checkbox-input" id="option25">
+                                        <label class="filter__checkbox-text" for="option25">17 и более</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#" class="filter__show">Показать товары</a>
+                        </div>
+                    </div>
+                    <div class="catalog__max-block">
+                        <div class="catalog__product product">
+                            <div class="product__row">
+                                <div class="product__body">
+                                    <div class="product__block">
+                                        <div class="product__title">Apple iPhone XS Max</div>
+                                        <div class="product__image">
+                                            <img src="image/1.png" alt="">
+                                        </div>
+                                        <div class="product__desc">
+                                            <div class="product__price">67 990р</div>
+                                            <div class="product__basket">
+                                                <a href="#"><i class="fas fa-shopping-cart basket-ico"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="product__body">
+                                    <div class="product__block">
+                                        <div class="product__title">Apple iPhone XS Max</div>
+                                        <div class="product__image">
+                                            <img src="image/1.png" alt="">
+                                        </div>
+                                        <div class="product__desc">
+                                            <div class="product__price">67 990р</div>
+                                            <div class="product__basket">
+                                                <a href="#"><i class="fas fa-shopping-cart basket-ico"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="product__body">
+                                    <div class="product__block">
+                                        <div class="product__title">Apple iPhone XS Max</div>
+                                        <div class="product__image">
+                                            <img src="image/1.png" alt="">
+                                        </div>
+                                        <div class="product__desc">
+                                            <div class="product__price">67 990р</div>
+                                            <div class="product__basket">
+                                                <a href="#"><i class="fas fa-shopping-cart basket-ico"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="product__body">
+                                    <div class="product__block">
+                                        <div class="product__title">Apple iPhone XS Max</div>
+                                        <div class="product__image">
+                                            <img src="image/1.png" alt="">
+                                        </div>
+                                        <div class="product__desc">
+                                            <div class="product__price">67 990р</div>
+                                            <div class="product__basket">
+                                                <a href="#"><i class="fas fa-shopping-cart basket-ico"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="product__body">
+                                    <div class="product__block">
+                                        <div class="product__title">Apple iPhone XS Max</div>
+                                        <div class="product__image">
+                                            <img src="image/1.png" alt="">
+                                        </div>
+                                        <div class="product__desc">
+                                            <div class="product__price">67 990р</div>
+                                            <div class="product__basket">
+                                                <a href="#"><i class="fas fa-shopping-cart basket-ico"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="product__body">
+                                    <div class="product__block">
+                                        <div class="product__title">Apple iPhone XS Max</div>
+                                        <div class="product__image">
+                                            <img src="image/1.png" alt="">
+                                        </div>
+                                        <div class="product__desc">
+                                            <div class="product__price">67 990р</div>
+                                            <div class="product__basket">
+                                                <a href="#"><i class="fas fa-shopping-cart basket-ico"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="product__body">
+                                    <div class="product__block">
+                                        <div class="product__title">Apple iPhone XS Max</div>
+                                        <div class="product__image">
+                                            <img src="image/1.png" alt="">
+                                        </div>
+                                        <div class="product__desc">
+                                            <div class="product__price">67 990р</div>
+                                            <div class="product__basket">
+                                                <a href="#"><i class="fas fa-shopping-cart basket-ico"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="product__body">
+                                    <div class="product__block">
+                                        <div class="product__title">Apple iPhone XS Max</div>
+                                        <div class="product__image">
+                                            <img src="image/1.png" alt="">
+                                        </div>
+                                        <div class="product__desc">
+                                            <div class="product__price">67 990р</div>
+                                            <div class="product__basket">
+                                                <a href="#"><i class="fas fa-shopping-cart basket-ico"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="product__body">
+                                    <div class="product__block">
+                                        <div class="product__title">Apple iPhone XS Max</div>
+                                        <div class="product__image">
+                                            <img src="image/1.png" alt="">
+                                        </div>
+                                        <div class="product__desc">
+                                            <div class="product__price">67 990р</div>
+                                            <div class="product__basket">
+                                                <a href="#"><i class="fas fa-shopping-cart basket-ico"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="product__body">
+                                    <div class="product__block">
+                                        <div class="product__title">Apple iPhone XS Max</div>
+                                        <div class="product__image">
+                                            <img src="image/1.png" alt="">
+                                        </div>
+                                        <div class="product__desc">
+                                            <div class="product__price">67 990р</div>
+                                            <div class="product__basket">
+                                                <a href="#"><i class="fas fa-shopping-cart basket-ico"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="product__body">
+                                    <div class="product__block">
+                                        <div class="product__title">Apple iPhone XS Max</div>
+                                        <div class="product__image">
+                                            <img src="image/1.png" alt="">
+                                        </div>
+                                        <div class="product__desc">
+                                            <div class="product__price">67 990р</div>
+                                            <div class="product__basket">
+                                                <a href="#"><i class="fas fa-shopping-cart basket-ico"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="product__body">
+                                    <div class="product__block">
+                                        <div class="product__title">Apple iPhone XS Max</div>
+                                        <div class="product__image">
+                                            <img src="image/1.png" alt="">
+                                        </div>
+                                        <div class="product__desc">
+                                            <div class="product__price">67 990р</div>
+                                            <div class="product__basket">
+                                                <a href="#"><i class="fas fa-shopping-cart basket-ico"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="footer__row">
+                    <div class="footer__copyright">
+                        <div class="footer__text">
+                            <img src="image/copyright.svg" alt="">
+                            <span>ООО "PhoneOFF" 2020. Все
+                                права защищены. Указанная стоимость товаров и условия их приобретения действительны на
+                                текущую дату.</span> </div>
+                    </div>
+                    <div class="footer__contacts">
+                        <i class="fab fa-vk"></i>
+                        <i class="fab fa-telegram-plane"></i>
+                        <a href="tel:+79966390607">+7 (996) - 639 - 06 - 07</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+        </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+        </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+        </script>
+
+</body>
+
+</html>
