@@ -1,0 +1,153 @@
+@import "normalize.scss";
+@import "header.scss";
+@import "footer.scss";
+
+// ?__________MAIN__________
+/* ?__________MAIN__________ */
+
+body {
+	font-family: "Comfortaa", cursive;
+}
+
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	min-height: 100%;
+	overflow: hidden;
+	color: #282A2D;
+}
+
+.container {
+	max-width: 1600px;
+	margin: 0 auto;
+}
+
+// !-----CATALOG-----
+/* !-----CATALOG----- */
+
+.catalog {
+	padding: 30px;
+}
+
+.catalog__row {
+	display: flex;
+	margin: 0 -15px;
+}
+
+.catalog__min-block {
+	flex: 0 1 25%;
+	padding: 0 15px;
+}
+
+.catalog__max-block {
+	flex: 0 1 75%;
+	padding: 0 15px;
+}
+
+// !-----FILTER-----
+/* !-----FILTER----- */
+
+.filter {
+	display: flex;
+	flex-direction: column;
+}
+
+.filter__block {
+	background: #dadada;
+	padding: 20px;
+	box-shadow: 0 0 2px #636363;
+	margin-bottom: 30px;
+}
+
+.filter__title {
+	font-size: 24px;
+	margin-bottom: 20px;
+	font-weight: bold;
+}
+
+.filter__checkbox {
+	margin-left: 10px;
+	margin-bottom: 20px;
+	font-size: 20px;
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
+.filter__checkbox-input {
+	width: 17px;
+	height: 17px;
+	margin-right: 10px;
+}
+
+.filter__show {
+	text-align: center;
+	font-weight: bold;
+	color: white;
+	font-size: 24px;
+	background: #000000;
+	padding: 15px;
+	box-shadow: 0 0 5px #636363;
+	border-radius: 4px;
+}
+
+
+// !-----PRODUCT-----
+/* !-----PRODUCT----- */
+.product__row {
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0 -15px;
+}
+
+.product__body {
+	flex: 0 1 33.333%;
+	padding: 0 15px;
+	margin-bottom: 30px;
+}
+
+.product__block {
+	text-align: center;
+	box-shadow: 0 0 2px #636363;
+	padding: 20px;
+
+	&:hover {
+		box-shadow: 0 0 2px #636363;
+		background: #dadada;
+		cursor: pointer;
+	}
+}
+
+.product__title {
+	font-size: 24px;
+	font-weight: bold;
+	margin-bottom: 20px;
+}
+
+.product__image {
+	img {
+		max-height: 250px;
+		margin-bottom: 25px;
+	}
+}
+
+.product__desc {
+	width: 60%;
+	margin: 0 auto;
+	display: flex;
+	justify-content: space-between;
+	font-size: 21px;
+	color: #282A2D;
+}
+
+.product__price {
+	font-weight: bold;
+}
+
+.product__basket {
+	i {
+		color: #282A2D;
+	}
+
+}
