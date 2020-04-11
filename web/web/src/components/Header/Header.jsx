@@ -15,14 +15,14 @@ const Header = () => {
                         </form>
                     </div>
                     <div className="header__logo">
-                        <NavLink to='/main'>
+                        <NavLink to='/'>
                             <img src={logo} alt="logo"></img>
                         </NavLink>
                     </div>
                     <div className="header__menu">
-                        <a className="header__button" href="#">Войти</a>
-                        <a className="header__button" href="#">Сравнение</a>
-                        <a className="header__button" href="#">Корзина</a>
+                        <NavLink to = '/personal' className="header__button"><a  href="#">Кабинет</a></NavLink>
+                        <NavLink to = '/#' className="header__button"><a  href="#">Сравнение</a></NavLink>
+                        <NavLink to = '/#' className="header__button"><a  href="#">Корзина</a></NavLink>
                     </div>
                 </div>
             </div>

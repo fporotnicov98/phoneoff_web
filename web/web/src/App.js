@@ -4,7 +4,7 @@ import './normalize.scss'
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import Catalog from './components/Catalog/Catalog';
-import { Route, BrowserRouter } from 'react-router-dom';
+import { Route, BrowserRouter, Switch } from 'react-router-dom';
 import Product from './components/Product/Product';
 import Personal from './components/Personal/Personal';
 
@@ -13,9 +13,12 @@ function App() {
     <BrowserRouter>
       <div className='wrapper'>
         <Header />
-        {/* <Catalog />  */}
-        <Personal />
-        {/* <Product /> */}
+        <Switch>
+          <Route exact path='/' render={() => (<Catalog />)} />
+          <Route path='/personal' render={() => (<Personal />)} />
+          <Route path='/product' render={() => (<Product />)} />
+        </Switch>
+
         <Footer />
       </div>
     </BrowserRouter>
