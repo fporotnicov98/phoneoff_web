@@ -1,0 +1,93 @@
+.compare__row {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+
+    .title {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        margin-bottom: 30px;
+        p {
+            font-size: 2em;
+        }
+        a {
+            color: #000;
+        }
+    }
+    .body {
+        background-color: #dadada;
+        box-shadow: 0 0 4px;
+        border-radius: 4px;
+        display: flex;
+        align-items: center;
+        .characteristics {
+            flex: 0 1 30%;
+            display: flex;
+            flex-direction: column;
+            border-right: 1px solid #adadad;
+            font-size: 1.2em;
+            .subtitle {
+                line-height: 200px;
+                height: 200px;
+                padding-left: 20px;
+                font-size: 1.7em;
+                border-bottom: 1px solid #adadad;
+            }
+            .items {
+                li {
+                    font-weight: bold;
+                    line-height: 60px;
+                    height: 60px;
+                    padding-left: 20px;
+                    border-bottom: 1px solid #adadad;
+                    &:last-child {
+                        border: 0;
+                    }
+                }
+            }
+        }
+        .products {
+            background-color: #e9e9e9;
+            flex: 0 1 35%;
+            display: flex;
+            flex-direction: column;
+            border-right: 1px solid #adadad;
+            font-size: 1.2em;
+            .product__name {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                line-height: 200px;
+                height: 200px;
+                text-align: center;
+                border-bottom: 1px solid #adadad;
+                position: relative;
+                img {
+                    display: block;
+                    max-height: 150px;
+                }
+                a {
+                    color: #000;
+                    i {
+                        position: absolute;
+                        top: 10px;
+                        right: 10px;
+                    }
+                }
+            }
+            .product__desc {
+                li {
+                    border-bottom: 1px solid #adadad;
+                    line-height: 60px;
+                    height: 60px;
+                    padding-left: 20px;
+                    &:last-child {
+                        border: 0;
+                    }
+                }
+            }
+        }
+    }
+}

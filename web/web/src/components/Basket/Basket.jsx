@@ -32,7 +32,6 @@ const Basket = () => {
                 <div className={style.summary}>Итого 'count' товаров на сумму:</div>
                 <NavLink to='/basket' className={style.btn__check}>Оформить заказ</NavLink>
             </div>
-
         </div>
     )
 }

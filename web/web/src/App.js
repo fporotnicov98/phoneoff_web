@@ -8,6 +8,7 @@ import { Route, BrowserRouter, Switch } from 'react-router-dom';
 import Product from './components/Product/Product';
 import Personal from './components/Personal/Personal';
 import Basket from './components/Basket/Basket';
+import Compare from './components/Compare/Compare';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
               <Route path='/personal' render={() => (<Personal />)} />
               <Route path='/product' render={() => (<Product />)} />
               <Route path='/basket' render={() => (<Basket />)} />
+              <Route path='/compare' render={() => (<Compare />)} />
             </Switch>
           </div>
         </div>

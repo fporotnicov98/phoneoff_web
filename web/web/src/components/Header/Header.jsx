@@ -21,7 +21,7 @@ const Header = () => {
                     </div>
                     <div className="header__menu">
                         <NavLink to = '/personal' className="header__button">Личный кабинет</NavLink>
-                        <NavLink to = '/#' className="header__button">Сравнение</NavLink>
+                        <NavLink to = '/compare' className="header__button">Сравнение</NavLink>
                         <NavLink to = '/basket' className="header__button">Корзина</NavLink>
                     </div>
                 </div>
