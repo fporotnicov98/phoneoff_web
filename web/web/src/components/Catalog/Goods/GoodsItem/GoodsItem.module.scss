@@ -1,11 +1,11 @@
-.product__body {
+.body {
 	flex: 0 1 33.333%;
 	padding: 0 15px;
 	margin-bottom: 30px;
 	
 }
 
-.product__block {
+.block {
 	text-align: center;
 	box-shadow: 0 0 2px #636363;
 	padding: 20px;
@@ -17,20 +17,20 @@
 	}
 }
 
-.product__title {
+.title {
 	font-size: 24px;
 	font-weight: bold;
 	margin-bottom: 20px;
 }
 
-.product__image {
+.image {
 	img {
 		max-height: 250px;
 		margin-bottom: 25px;
 	}
 }
 
-.product__desc {
+.desc {
 	width: 60%;
 	margin: 0 auto;
 	display: flex;
@@ -39,11 +39,11 @@
 	color: #282A2D;
 }
 
-.product__price {
+.price {
 	font-weight: bold;
 }
 
-.product__basket {
+.basket {
 	i {
 		color: #282A2D;
 	}

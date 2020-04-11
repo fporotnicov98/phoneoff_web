@@ -1,21 +1,21 @@
 import React from 'react'
-import './GoodsItem.scss'
+import style from './GoodsItem.module.scss'
 import tel from './../../../image/1.png'
 import { NavLink } from 'react-router-dom'
 
 const GoodsItem = () => {
     return (
-        <div className="product__body">
+        <div className={style.body}>
             <NavLink to='/product'>
-                <div className="product__block">
-                    <div className="product__title">Apple iPhone XS Max</div>
-                    <div className="product__image">
+                <div className={style.block}>
+                    <div className={style.title}>Apple iPhone XS Max</div>
+                    <div className={style.image}>
                         <img src={tel} alt=""></img>
                     </div>
-                    <div className="product__desc">
-                        <div className="product__price">67 990р</div>
-                        <div className="product__basket">
-                            <a href="#"><i class="fas fa-shopping-cart basket-ico"></i></a>
+                    <div className={style.desc}>
+                        <div className={style.price}>67 990р</div>
+                        <div className={style.basket}>
+                            <a href="#s"><i className="fas fa-shopping-cart basket-ico"></i></a>
                         </div>
                     </div>
                 </div>

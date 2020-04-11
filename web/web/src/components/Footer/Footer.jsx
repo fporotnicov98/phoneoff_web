@@ -16,8 +16,8 @@ const Footer = () => {
                         </div>
                         </div>
                         <div className="footer__contacts">
-                            <a href=""><i className="fab fa-vk"></i></a>
-                            <a href=""><i className="fab fa-telegram-plane"></i></a>
+                            <a href="#s"><i className="fab fa-vk"></i></a>
+                            <a href="#s"><i className="fab fa-telegram-plane"></i></a>
                             <a className="footer__tel" href="tel:+79966390607">+7 (996) - 639 - 06 - 07</a>
                         </div>
                     </div>

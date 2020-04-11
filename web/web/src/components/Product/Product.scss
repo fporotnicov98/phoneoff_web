@@ -1,40 +1,10 @@
-// ? Переменные
-
-$ctext: #6c6d70;
-
-// ?__________MAIN__________
-/* ?__________MAIN__________ */
-
-body {
-	font-family: "Comfortaa", cursive;
-}
-
-.wrapper {
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	min-height: 100%;
-	overflow: hidden;
-	color: $ctext;
-	;
-}
-
-.container {
-	max-width: 1600px;
-	margin: 0 auto;
-}
 
 // !-----PRODUCT-----
 /* !-----PRODUCT----- */
 
-.product {
-	// flex: 1 1 auto;
-	padding: 30px 0;
-	
-}
-
 .products {
-	box-shadow: 0 0 8px #DADADA;
+	box-shadow: 0 0 4px;
+	border-radius: 4px;
 }
 
 .product__header {
@@ -81,8 +51,7 @@ body {
 .product__button-like {}
 
 .product__body {
-	
-	padding: 40px 30px;
+	padding: 30px 30px;
 }
 
 .product__row {
@@ -179,6 +148,7 @@ body {
 
 .basket {
 	width: 60%;
+	padding-bottom: 30px;
 	margin: 0 auto;
 	display: flex;
 	justify-content: space-between;

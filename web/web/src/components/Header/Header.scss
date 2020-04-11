@@ -10,18 +10,16 @@
     min-height: 150px;
 	display: flex;
 	align-items: center;
-	justify-content: space-between;
 }
 
 .header__search {
 	display: flex;
-	justify-content: center;
 	flex: 0 1 50%;
 	font-size: 16px;
 }
 
 .header__form {
-	width: 79%;
+	width: 82%;
 	display: flex;
 	position: relative;
 	align-items: center;
@@ -43,7 +41,6 @@
 
 .header__logo {
 	flex: 0 0 180px;
-
 	img {
 		max-width: 100%;
 	}
@@ -51,12 +48,15 @@
 
 .header__menu {
 	display: flex;
-	justify-content: center;
+	justify-content: flex-end;
 	flex: 0 1 50%;
+	a {
+		display: block;
+	}
 }
 
 .header__button {
-	flex: 0 1 23%;
+	flex: 0 1 25%;
 	background-color: #fff;
 	box-shadow: 0 0 2px #282A2D;
 	color: #282A2D;

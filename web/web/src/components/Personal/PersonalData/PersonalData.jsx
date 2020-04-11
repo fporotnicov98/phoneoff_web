@@ -1,6 +1,5 @@
 import React from 'react'
 import './PersonalData.scss'
-import Personal from '../Personal'
 
 const PersonalData = () => {
     return (

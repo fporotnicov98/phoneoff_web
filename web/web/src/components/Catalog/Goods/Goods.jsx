@@ -1,12 +1,12 @@
 import React from 'react'
-import './Goods.scss'
+import style from'./Goods.module.scss'
 import GoodsItem from './GoodsItem/GoodsItem'
 
 
 const Goods = () => {
     return (
-        <div className="product">
-            <div className="product__row">
+        <div className={style.product}>
+            <div className={style.product__row}>
                 <GoodsItem />
                 <GoodsItem />
                 <GoodsItem />
