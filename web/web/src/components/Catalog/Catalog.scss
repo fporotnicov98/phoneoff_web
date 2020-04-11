@@ -1,0 +1,21 @@
+// !-----CATALOG-----
+/* !-----CATALOG----- */
+
+.catalog {
+	padding: 30px;
+}
+
+.catalog__row {
+	display: flex;
+	margin: 0 -15px;
+}
+
+.catalog__min-block {
+	flex: 0 1 25%;
+	padding: 0 15px;
+}
+
+.catalog__max-block {
+	flex: 0 1 75%;
+	padding: 0 15px;
+}

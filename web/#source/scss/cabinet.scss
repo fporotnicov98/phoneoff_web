@@ -1,52 +1,52 @@
-.information{
+.information {
 	display: flex;
-  	flex: 1 1 auto;
+	flex: 1 1 auto;
 }
-.information__row{
+.information__row {
 	display: flex;
 	justify-content: space-around;
 	padding: 30px 0;
 }
-.information__title{
+.information__title {
 	font-size: 32px;
 	font-weight: bold;
 	text-align: center;
 	margin-bottom: 20px;
 }
-.information p{
+.information p {
 	margin-block-start: 0;
 	margin-block-end: 0;
 }
 
-.information__data{
+.information__data {
 	max-width: 35%;
-	.data__form{
+	.data__form {
 		background: #dadada;
 		box-shadow: 0 0 5px;
 		border-radius: 10px;
 		padding: 25px;
-		.data__input{
+		.data__input {
 			display: flex;
 			justify-content: space-between;
 			align-items: center;
 			margin-bottom: 30px;
 			font-size: 26px;
-			input{
+			input {
 				font-size: 22px;
 				max-width: 200px;
 				padding: 5px;
 				margin-left: 25px;
 			}
-			.radio{
+			.radio {
 				margin-right: 60px;
 				font-size: 32px;
 			}
 		}
-		.data__buttons{
+		.data__buttons {
 			display: flex;
 			justify-content: space-around;
 			margin: 40px 0 10px 0;
-			button{
+			button {
 				text-align: center;
 				font-weight: bold;
 				color: white;
@@ -58,12 +58,12 @@
 		}
 	}
 }
-.information__order{
+.information__order {
 	margin-left: 100px;
 	max-width: 70%;
-	.order__form{
-			padding: 15px;
-		.order__info{
+	.order__form {
+		padding: 15px;
+		.order__info {
 			display: flex;
 			font-size: 26px;
 			margin-bottom: 2px;
@@ -71,18 +71,18 @@
 			box-shadow: 0 0 5px;
 			border-radius: 10px;
 			padding: 20px;
-			.order__number{
+			.order__number {
 				margin-right: 20px;
 			}
-			.order__label{
+			.order__label {
 				margin-right: 20px;
 			}
-			.order__price{
+			.order__price {
 				margin-right: 20px;
 			}
-			.order__status{
+			.order__status {
 				margin-right: 20px;
-				&::before{
+				&::before {
 					content: "";
 					border: 1px solid black;
 					margin-right: 15px;

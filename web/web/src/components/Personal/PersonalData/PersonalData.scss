@@ -1,0 +1,40 @@
+.information__data {
+	max-width: 35%;
+	.data__form {
+		background: #dadada;
+		box-shadow: 0 0 5px;
+		border-radius: 10px;
+		padding: 25px;
+		.data__input {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			margin-bottom: 30px;
+			font-size: 26px;
+			input {
+				font-size: 22px;
+				max-width: 200px;
+				padding: 5px;
+				margin-left: 25px;
+			}
+			.radio {
+				margin-right: 60px;
+				font-size: 32px;
+			}
+		}
+		.data__buttons {
+			display: flex;
+			justify-content: space-around;
+			margin: 40px 0 10px 0;
+			button {
+				text-align: center;
+				font-weight: bold;
+				color: white;
+				font-size: 14px;
+				background: #000000;
+				padding: 15px;
+				border-radius: 2px;
+			}
+		}
+	}
+}

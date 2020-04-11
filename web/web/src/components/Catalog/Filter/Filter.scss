@@ -1,0 +1,47 @@
+// !-----FILTER-----
+/* !-----FILTER----- */
+
+.filter {
+	display: flex;
+	flex-direction: column;
+}
+
+.filter__block {
+	background: #dadada;
+	padding: 20px;
+	box-shadow: 0 0 2px #636363;
+	margin-bottom: 30px;
+}
+
+.filter__title {
+	font-size: 24px;
+	margin-bottom: 20px;
+	font-weight: bold;
+}
+
+.filter__checkbox {
+	margin-left: 10px;
+	margin-bottom: 20px;
+	font-size: 20px;
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
+.filter__checkbox-input {
+	width: 17px;
+	height: 17px;
+	margin-right: 10px;
+}
+
+.filter__show {
+	text-align: center;
+	font-weight: bold;
+	color: white;
+	font-size: 24px;
+	background: #000000;
+	padding: 15px;
+	box-shadow: 0 0 5px #636363;
+	border-radius: 4px;
+}
