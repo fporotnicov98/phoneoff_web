@@ -1,7 +1,7 @@
 import React from 'react'
 import style from './Compare.module.scss'
 import { NavLink } from 'react-router-dom';
-import image from './../image/1.png'
+import image from './../image/iphone.png'
 
 const Compare = () => {
     return (

@@ -1,7 +1,7 @@
 import React from 'react'
 import style from './Basket.module.scss'
 import { NavLink } from 'react-router-dom'
-import photo from './../image/1.png'
+import photo from './../image/iphone.png'
 
 const Basket = () => {
     return (

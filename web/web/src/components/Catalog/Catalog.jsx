@@ -1,7 +1,7 @@
 import React from 'react'
 import style from './Catalog.module.scss'
 import Filter from './Filter/Filter'
-import Goods from './Goods/Goods'
+import GoodsContainer from './Goods/GoodsContainer'
 
 const Catalog = () => {
     return (
@@ -10,7 +10,7 @@ const Catalog = () => {
                 <Filter />
             </div>
             <div className={style.catalog__maxBlock}>
-                <Goods />
+                <GoodsContainer />
             </div>
         </div>
     )
