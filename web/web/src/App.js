@@ -9,12 +9,13 @@ import Product from './components/Product/Product';
 import Personal from './components/Personal/Personal';
 import Basket from './components/Basket/Basket';
 import Compare from './components/Compare/Compare';
+import HeaderContainer from './components/Header/HeaderContainer';
 
 function App() {
   return (
     <BrowserRouter>
       <div className={style.wrapper}>
-        <Header />
+        <HeaderContainer />
         <div className={style.main}>
           <div className={style.container}>
             <Switch>

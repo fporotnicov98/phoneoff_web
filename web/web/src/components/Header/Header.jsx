@@ -3,14 +3,23 @@ import './Header.scss'
 import logo from './../image/logo.png';
 import { NavLink } from 'react-router-dom';
 
-const Header = () => {
+const Header = (props) => {
+    debugger
+
+    let getText = React.createRef();
+
+    let onFindTitle = () => {
+        let title = getText.current.value;
+        props.findNewTitle(title)
+    }
+
     return (
         <header className="header">
             <div className="container">
                 <div class="header__row">
                     <div className="header__search">
                         <form className="header__form">
-                            <input className="header__search-input" type="search" placeholder="Поиск"></input>
+                            <input className="header__search-input" ref = {getText} type="search" placeholder="Поиск" onChange = {onFindTitle} value = {props.filterGoods}></input>
                             <button type="submit" className="header__search-button"><i className=" fas fa-search"></i></button>
                         </form>
                     </div>
