@@ -12,6 +12,8 @@ const Header = (props) => {
         let title = getText.current.value;
         props.findNewTitle(title)
     }
+    
+
 
     return (
         <header className="header">
@@ -20,7 +22,7 @@ const Header = (props) => {
                     <div className="header__search">
                         <form className="header__form">
                             <input className="header__search-input" ref = {getText} type="search" placeholder="Поиск" onChange = {onFindTitle} value = {props.filterGoods}></input>
-                            <button type="submit" className="header__search-button"><i className=" fas fa-search"></i></button>
+                            {/* <button className="header__search-button" onClick = {() => {props.filterNewTitle()}}><i className=" fas fa-search"></i></button> */}
                         </form>
                     </div>
                     <div className="header__logo">

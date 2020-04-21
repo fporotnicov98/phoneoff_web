@@ -1,11 +1,10 @@
 import Header from './Header'
 import {connect} from 'react-redux'
-import {findNewTitleAC} from "./../../redux/goodsReducer"
+import {updateNewTitleAC,filterNewTitleAC} from "./../../redux/goodsReducer"
 
 
 
 const mapStateToProps = (state) => {
-    debugger
 
     return {
         filterGoods: state.catalogPage.filterGoods,
@@ -14,7 +13,10 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         findNewTitle: (title) => {
-            dispatch(findNewTitleAC(title))
+            dispatch(updateNewTitleAC(title))
+        },
+        filterNewTitle: () => {
+            dispatch(filterNewTitleAC())
         }
     }
 }

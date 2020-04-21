@@ -1,4 +1,5 @@
-const FIND_NEW_TITLE = "FIND_NEW_TITLE";
+const UPDATE_NEW_TITLE = "UPDATE_NEW_TITLE";
+const FILTER_NEW_TITLE = "FILTER_NEW_TITLE";
 
 let initial = {
     filterGoods: "",
@@ -20,14 +21,17 @@ let initial = {
 const goodsReducer = (state = initial, action) => {
     debugger
     switch (action.type) {
-        case "FIND_NEW_TITLE":
+        case "UPDATE_NEW_TITLE":
             state.filterGoods = action.getTitle;
-           return {
-            ...state,
-            goods: state.goods.filter(prod => prod.title.toLowerCase().startsWith(state.filterGoods))
-           }
-               
-           
+            return {
+                ...state,
+                goods: state.goods.filter(prod => prod.title.toLowerCase().startsWith(state.filterGoods))  
+                
+
+            }
+                
+            
+
         default:
             return state;
     }
@@ -35,6 +39,7 @@ const goodsReducer = (state = initial, action) => {
 
 
 
-export const findNewTitleAC = (title) => ({ type: FIND_NEW_TITLE, getTitle:title })
+export const updateNewTitleAC = (title) => ({ type: UPDATE_NEW_TITLE, getTitle:title })
+export const filterNewTitleAC = () => ({ type: FILTER_NEW_TITLE})
 
 export default goodsReducer
