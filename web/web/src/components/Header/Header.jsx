@@ -4,7 +4,6 @@ import logo from './../image/logo.png';
 import { NavLink } from 'react-router-dom';
 
 const Header = (props) => {
-    debugger
 
     let getText = React.createRef();
 

@@ -5,16 +5,15 @@ import { NavLink } from 'react-router-dom'
 
 
 const Goods = (props) => {
-    debugger
     return (
         <div className={style.product}>
             <div className={style.product__row}>
                 {
-                    props.goods.map(prod => <div key={prod.id}>
+                    props.phones.map(prod => <div key={prod.id}>
                         <div className={style.body}>
                             <NavLink to='/product'>
                                 <div className={style.block}>
-                                    <div className={style.title}>{prod.title}</div>
+                                    <div className={style.title}>{prod.name}</div>
                                     <div className={style.image}>
                                         <img src={prod.character.goodsPhoto != null ? prod.character.goodsPhoto : iphone }></img>
                                     </div>
