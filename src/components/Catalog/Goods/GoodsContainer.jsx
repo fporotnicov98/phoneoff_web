@@ -6,6 +6,7 @@ import {getPhones} from '../../../redux/goodsReducer'
 class GoodsContainer extends React.Component{
 
     componentDidMount() {
+        debugger
         this.props.getPhones()
     }
 

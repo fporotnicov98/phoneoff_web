@@ -4,7 +4,6 @@ import { NavLink } from 'react-router-dom'
 
 
 const Goods = (props) => {
-    debugger
     return (
         <div className={style.product}>
             <div className={style.product__row}>

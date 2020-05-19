@@ -11,8 +11,8 @@ const API = {
     getPhones(){
         return instanse.get('GetPhones')
     },
-    getPhonePage(phoneId){
-        return instanse.get(`GetPhone/?id=${phoneId}`)
+    getProduct(productId){
+        return instanse.get(`GetPhone/?id=${productId}`)
     }
 }
 

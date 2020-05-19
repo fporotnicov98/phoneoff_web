@@ -13,7 +13,6 @@ const goodsReducer = (state = initial, action) => {
     
     switch (action.type) {
         case "SET_PHONES":
-            debugger
             return {
                 ...state,
                 phones: action.phones
@@ -36,10 +35,8 @@ export const filterNewTitleAC = () => ({ type: FILTER_NEW_TITLE})
 export const setPhones = (phones) => ({type: SET_PHONES, phones})
 
 export const getPhones = () => dispatch => {
-    debugger
     API.getPhones()
         .then(response => {
-            debugger
             dispatch(setPhones(response.data))
         })
 }
