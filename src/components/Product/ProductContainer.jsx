@@ -1,32 +1,33 @@
 import React from 'react'
+import Product from './Product'
 import { connect } from 'react-redux'
-import getProduct from '../../redux/productReducer'
+import {getProduct} from '../../redux/productReducer'
 import { compose } from 'redux'
 import { withRouter } from 'react-router-dom'
 
 
 
-export class ProductContainer extends React.Component{
+class ProductContainer extends React.Component{
 
-    componentDidMount(){
+    componentWillMount(){
         debugger
-        let productId = this.props.match
+        let productId = this.props.match.params.productId
         if (!productId) {
             alert("404")
         }
         this.props.getProduct(productId)
     }
-
+    
     render(){
-        return(
-            <div></div>
-        )
+        return <Product {...this.props} />
+
+
     }
 }
 
 const mapStateToProps = (state) => {
     return {
-        product:state.productPage.product
+        product:state.productPage.product,
     }
 }
 

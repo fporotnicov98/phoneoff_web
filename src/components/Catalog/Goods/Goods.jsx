@@ -10,7 +10,7 @@ const Goods = (props) => {
                 {
                     props.phones.map(prod => <div key={prod.Id}>
                         <div className={style.body}>
-                            <NavLink to='/product'>
+                            <NavLink to={'/product/'+ prod.Id}>
                                 <div className={style.block}>
                                     <div className={style.title}>{prod.Name}</div>
                                     <div className={style.image}>

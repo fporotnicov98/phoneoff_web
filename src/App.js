@@ -20,7 +20,7 @@ function App() {
             <Switch>
               <Route exact path='/' render={() => (<Catalog />)} />
               <Route path='/personal' render={() => (<Personal />)} />
-              <Route path='/product/:id?' render={() => (<ProductContainer/>)} />
+              <Route path='/product/:productId?' render={() => (<ProductContainer/>)} />
               <Route path='/basket' render={() => (<Basket />)} />
               <Route path='/compare' render={() => (<Compare />)} />
             </Switch>

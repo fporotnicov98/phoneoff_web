@@ -7,7 +7,6 @@ let initial = {
 }
 
 const productReducer = (state = initial, action) => {
-      
     switch (action.type) {
         case "SET_PRODUCT":
             return {
