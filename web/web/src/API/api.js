@@ -12,7 +12,7 @@ const API = {
         return instanse.get('GetPhones')
     },
     getPhonePage(phoneId){
-        return instanse.get(`GetPhone/?${phoneId}`)
+        return instanse.get(`GetPhone/?id=${phoneId}`)
     }
 }
 
