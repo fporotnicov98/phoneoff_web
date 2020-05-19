@@ -13,9 +13,10 @@ const goodsReducer = (state = initial, action) => {
     
     switch (action.type) {
         case "SET_PHONES":
+            debugger
             return {
                 ...state,
-                phones: [...action.phones]
+                phones: action.phones
             }
         case "UPDATE_NEW_TITLE":
             state.filterPhones = action.getTitle;
@@ -39,7 +40,7 @@ export const getPhones = () => dispatch => {
     API.getPhones()
         .then(response => {
             debugger
-            dispatch(setPhones(response.items))
+            dispatch(setPhones(response.data))
         })
 }
 

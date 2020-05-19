@@ -1,18 +1,18 @@
 import * as axios from 'axios'
 
 
-// const instanse = axios.create({
-//     baseURL: '
-// })
+const instanse = axios.create({
+    baseURL: 'https://phoneoff.westeurope.cloudapp.azure.com/Phone/',
+    withCredentials: true
+})
 
 
 const API = {
     getPhones(){
-        return axios.get('http://phoneoff.westeurope.cloudapp.azure.com/Phone/GetPhones')
-        .then(response => {
-            debugger
-            return response.data 
-        })
+        return instanse.get('GetPhones')
+    },
+    getPhonePage(phoneId){
+        return instanse.get(`GetPhone/?${phoneId}`)
     }
 }
 
