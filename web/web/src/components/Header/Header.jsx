@@ -1,43 +1,66 @@
 import React from 'react'
-import './Header.scss'
+import style from './Header.module.scss'
 import logo from './../image/logo.png';
 import { NavLink } from 'react-router-dom';
+import ModalAuth from '../ModalWindow/ModalAuth/ModalAuth'
+import ModalRegister from '../ModalWindow/ModalRegister/ModalRegister';
 
-const Header = (props) => {
 
-    let getText = React.createRef();
+class Header extends React.Component {
 
-    let onFindTitle = () => {
-        let title = getText.current.value;
-        props.findNewTitle(title)
+    constructor(props) {
+        super(props);
+        this.state = { isModalOpen: false };
+        this.getText = React.createRef();
     }
-    
 
+    onFindTitle() {
+        let title = this.getText.current.value;
+        this.props.findNewTitle(title)
+    }
+    openModal() {
+        this.setState({ isModalOpen: true });
+    }
 
-    return (
-        <header className="header">
-            <div className="container">
-                <div class="header__row">
-                    <div className="header__search">
-                        <form className="header__form">
-                            <input className="header__search-input" ref = {getText} type="search" placeholder="Поиск" onChange = {onFindTitle} value = {props.filterGoods}></input>
-                            {/* <button className="header__search-button" onClick = {() => {props.filterNewTitle()}}><i className=" fas fa-search"></i></button> */}
-                        </form>
-                    </div>
-                    <div className="header__logo">
-                        <NavLink to='/'>
-                            <img src={logo} alt="logo"></img>
-                        </NavLink>
-                    </div>
-                    <div className="header__menu">
-                        <NavLink to = '/personal' className="header__button">Личный кабинет</NavLink>
-                        <NavLink to = '/compare' className="header__button">Сравнение</NavLink>
-                        <NavLink to = '/basket' className="header__button">Корзина</NavLink>
+    closeModal() {
+        this.setState({ isModalOpen: false });
+    }
+
+    render() {
+        return (
+            <header className={style["header"]}>
+                <div className={style["container"]}>
+                    <div class={style["header__row"]}>
+                        <div className={style["header__search"]}>
+                            <form className={style["header__form"]}>
+                                <input className={style["header__search-input"]} ref={this.getText} type="search" placeholder="Поиск" onChange={this.onFindTitle} value={this.props.filterGoods}></input>
+                                {/* <button className={style["header__search-button"]} onClick = {() => {props.filterNewTitle()}}><i className=" fas fa-search"></i></button> */}
+                            </form>
+                        </div>
+                        <div className={style["header__logo"]}>
+                            <NavLink to='/'>
+                                <img src={logo} alt="logo"></img>
+                            </NavLink>
+                        </div>
+                        <div className={style["header__menu"]}>
+                            <button className={style["header__button"]} onClick={() => this.openModal()}><NavLink to=''>Вход</NavLink></button>
+                            <ModalAuth
+                                isOpen={this.state.isModalOpen}
+                                onClose={() => this.closeModal()}
+                            />
+                            {/* <ModalRegister
+                                isOpen={this.state.isModalOpen}
+                                onClose={() => this.closeModal()}
+                            /> */}
+                            <button className={style["header__button"]}><NavLink to='/compare'>Сравнение</NavLink></button>
+                            <button className={style["header__button"]}><NavLink to='/basket'>Корзина</NavLink></button>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </header>
-    )
+            </header>
+        )
+    }
+
 }
 
 export default Header;
