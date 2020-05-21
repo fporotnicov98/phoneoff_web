@@ -22,9 +22,11 @@
         border-radius: 4px;
 
         .goods {
+            padding: 20px;
             border-bottom: 1px solid #696969;
             display: flex;
             align-items: center;
+            // justify-content: space-between;
             font-size: 20px;
             height: 180px;
             text-align: center;
@@ -32,26 +34,21 @@
             &:last-child {
                 border: 0;
             }
-            .check {
-                width: 5%;
-                input {
-                    width: 17px;
-                    height: 17px;
-                }
-            }
             .photo {
-                width: 5%;
+                flex: 0 0 70px;
                 img {
                     max-width: 70px;
                 }
             }
 
             .nameGoods {
-                width: 62%;
+                word-wrap: break-word;
+                margin: 0 15px;
+                flex: 0 1 auto;
             }
 
             .amount {
-                width: 10%;
+                flex: 0 0 120px;
                 display: flex;
                 align-items: center;
                 .plus {
@@ -89,10 +86,10 @@
             }
             .price {
                 font-size: 1.5em;
-                width: 13%;
+                flex: 0 0 150px;
             }
             .delete {
-                width: 5%;  
+                flex: 0 0 50px;  
             }
         }
     }

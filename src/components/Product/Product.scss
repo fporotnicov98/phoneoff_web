@@ -1,6 +1,13 @@
 
 // !-----PRODUCT-----
 /* !-----PRODUCT----- */
+.back {
+	text-align: right;
+	margin-bottom: 20px;
+	a {
+		color: #000;
+	}
+}
 
 .products {
 	box-shadow: 0 0 4px;
@@ -65,11 +72,15 @@
 }
 
 .slider__block {
-	
 	width: 100%;
 	min-height: 600px;
 	margin: 0 auto;
+	display: flex;
+	align-items: center;
 	background-color: #dadada;
+	img {
+		width: 100%;
+	}
 }
 
 .product__info {
@@ -88,13 +99,13 @@
 }
 
 .color {
-	margin-bottom: 40px;
+	margin-bottom: 20px;
 }
 
 .color__title {
 	font-size: 1.5em;
 	text-align: center;
-	margin-bottom: 40px;
+	margin-bottom: 20px;
 	
 }
 
@@ -130,14 +141,13 @@
 
 .desc__title {
 	font-size: 1.5em;
-	margin-bottom: 40px;
+	margin-bottom: 20px;
 }
 
-.desc__item {
-
-	
+.desc {
 	p {
 		margin-bottom: 15px;
+		line-height: 28px;
 	}
 	span {
 		margin-left: 30px;

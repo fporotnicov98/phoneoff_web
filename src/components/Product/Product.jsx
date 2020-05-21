@@ -1,15 +1,19 @@
 import React from 'react'
 import './Product.scss'
 import Preloader from '../commons/Preloader'
+import { NavLink } from 'react-router-dom'
 
 const Product = (props) => {
-    if (!props.product){
+    if (!props.product) {
         return (
-        <Preloader />
+            <Preloader />
         )
     }
     return (
+        <>
+        <p className='back'><NavLink to="/">Вернуться к покупкам</NavLink></p>
         <div class="products">
+            
             <div class="product">
                 <div class="product__header">
                     <div class="product__title">Мобильный телефон {props.product.Name}</div>
@@ -22,7 +26,7 @@ const Product = (props) => {
                     <div class="product__row">
                         <div class="slider">
                             <div class="slider__block">
-                                <img src={`data:image/png;base64,${props.product.Image}`}/>
+                                <img src={`data:image/png;base64,${props.product.Image}`} />
                             </div>
                         </div>
                         <div class="product__info">
@@ -38,11 +42,13 @@ const Product = (props) => {
                                 </div>
                                 <div class="desc__items">
                                     <div className="desc__title">Основные характеристики</div>
-                                    <div class="desc__item">
+                                    <div class="desc">
                                         <p>Оперативная память: <span>{props.product.ROM} Гб</span></p>
                                         <p>Встроенная память: <span>{props.product.RAM} Гб</span></p>
                                         <p>Диагональ: <span>{props.product.Diagonal}"</span></p>
                                     </div>
+                                    <div className="desc__title">Описание</div>
+                                    <div className="desc"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis culpa incidunt, illo accusamus tenetur id aperiam est quidem distinctio dolores beatae asperiores! Corporis similique deserunt illum aliquid harum vitae totam, ab nobis consequatur?</p></div>
                                 </div>
                             </div>
                             <div class="basket">
@@ -56,6 +62,7 @@ const Product = (props) => {
             <div class="about"></div>
             <div class="characterictics"></div>
         </div>
+        </>
     )
 }
 

@@ -12,9 +12,6 @@ const Basket = () => {
             </div>
             <div className={style.body}>
                 <div className={style.goods}>
-                    <div className={style.check}>
-                        <input type="checkbox" id="option1"></input>
-                    </div>
                     <div className={style.photo}>
                         <NavLink to='/product'><img src={photo} alt="" /></NavLink>
                     </div>
