@@ -48,7 +48,7 @@ const Product = (props) => {
                                         <p>Диагональ: <span>{props.product.Diagonal}"</span></p>
                                     </div>
                                     <div className="desc__title">Описание</div>
-                                    <div className="desc"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis culpa incidunt, illo accusamus tenetur id aperiam est quidem distinctio dolores beatae asperiores! Corporis similique deserunt illum aliquid harum vitae totam, ab nobis consequatur?</p></div>
+                                    <div className="desc"><p>{props.product.Description}</p></div>
                                 </div>
                             </div>
                             <div class="basket">

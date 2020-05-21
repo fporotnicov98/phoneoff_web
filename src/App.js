@@ -17,6 +17,7 @@ function App() {
         <HeaderContainer />
         <div className={style.main}>
           <div className={style.container}>
+            
             <Switch>
               <Route exact path='/' render={() => (<Catalog />)} />
               <Route path='/personal' render={() => (<Personal />)} />

@@ -2,11 +2,12 @@ import React from 'react'
 import Goods from './Goods'
 import {connect} from 'react-redux'
 import {getPhones} from '../../../redux/goodsReducer'
+import { searchPhones } from '../SortFilterContainer/SortFilterContainer'
+
 
 class GoodsContainer extends React.Component{
 
     componentDidMount() {
-        debugger
         this.props.getPhones()
     }
 
@@ -25,7 +26,7 @@ class GoodsContainer extends React.Component{
 
 const mapStateToProps = (state) => {
     return {
-        phones: state.catalogPage.phones
+        phones: state.catalogPage.phones && searchPhones(state.catalogPage.phones,state.filter.filterBy,state.filter.searchQuery)
     }
 }
 

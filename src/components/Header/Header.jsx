@@ -11,7 +11,6 @@ class Header extends React.Component {
     constructor(props) {
         super(props);
         this.state = { isModalOpen: false };
-        this.getText = React.createRef();
     }
 
     onFindTitle() {
@@ -33,7 +32,7 @@ class Header extends React.Component {
                     <div class={style["header__row"]}>
                         <div className={style["header__search"]}>
                             <form className={style["header__form"]}>
-                                <input className={style["header__search-input"]} ref={this.getText} type="search" placeholder="Поиск" onChange={this.onFindTitle} value={this.props.filterGoods}></input>
+                                <input className={style["header__search-input"]} type="search" placeholder="Поиск" onChange={e => this.props.setSearchQuery(e.target.value)} value={this.props.searchQuery}></input>
                                 {/* <button className={style["header__search-button"]} onClick = {() => {props.filterNewTitle()}}><i className=" fas fa-search"></i></button> */}
                             </form>
                         </div>

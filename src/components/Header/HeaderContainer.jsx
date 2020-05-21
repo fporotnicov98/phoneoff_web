@@ -1,27 +1,13 @@
-import Header from './Header'
 import {connect} from 'react-redux'
-import {updateNewTitleAC,filterNewTitleAC} from "./../../redux/goodsReducer"
+import { setSearchQuery } from "../../redux/filterReducer";
+import Header from './Header';
 
 
-
-const mapStateToProps = (state) => {
-
+const mapStateToProps = state => {
     return {
-        filterGoods: state.catalogPage.filterGoods,
-    }
-}
-const mapDispatchToProps = (dispatch) => {
-    return {
-        findNewTitle: (title) => {
-            dispatch(updateNewTitleAC(title))
-        },
-        filterNewTitle: () => {
-            dispatch(filterNewTitleAC())
-        }
-    }
+        searchQuery: state.filter.searchQuery
+    }  
 }
 
-const HeaderContainer = connect(mapStateToProps,mapDispatchToProps)(Header)
 
-
-export default HeaderContainer;
+export default connect(mapStateToProps,{setSearchQuery})(Header);

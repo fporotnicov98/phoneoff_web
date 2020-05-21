@@ -1,8 +1,5 @@
 import API from '../API/api'
 
-const UPDATE_NEW_TITLE = "UPDATE_NEW_TITLE";
-const FILTER_NEW_TITLE = "FILTER_NEW_TITLE";
-const SET_PHONES = "SET_PHONES"
 
 let initial = {
     filterPhones: "",
@@ -15,13 +12,7 @@ const goodsReducer = (state = initial, action) => {
         case "SET_PHONES":
             return {
                 ...state,
-                phones: action.phones
-            }
-        case "UPDATE_NEW_TITLE":
-            state.filterPhones = action.getTitle;
-            return {
-                ...state,
-                phones: state.phones.filter(prod => prod.title.toLowerCase().startsWith(state.filterPhones))  
+                phones: action.payload
             }
         default:
             return state;
@@ -30,9 +21,8 @@ const goodsReducer = (state = initial, action) => {
 
 
 
-export const updateNewTitleAC = (title) => ({ type: UPDATE_NEW_TITLE, getTitle:title })
-export const filterNewTitleAC = () => ({ type: FILTER_NEW_TITLE})
-export const setPhones = (phones) => ({type: SET_PHONES, phones})
+
+export const setPhones = (phones) => ({type: "SET_PHONES", payload: phones})
 
 export const getPhones = () => dispatch => {
     API.getPhones()

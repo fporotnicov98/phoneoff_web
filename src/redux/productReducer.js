@@ -1,7 +1,5 @@
 import API from '../API/api'
 
-const SET_PRODUCT = "SET_PRODUCT"
-
 let initial = {
     product: null
 }
@@ -11,7 +9,7 @@ const productReducer = (state = initial, action) => {
         case "SET_PRODUCT":
             return {
                 ...state,
-                product: action.product
+                product: action.payload
             }
         default:
             return state;
@@ -19,7 +17,7 @@ const productReducer = (state = initial, action) => {
 }
 
 
-export const setProduct = (product) => ({type: SET_PRODUCT, product})
+export const setProduct = (product) => ({type: "SET_PRODUCT", payload: product})
 
 export const getProduct = (productId) => (dispatch) => {
     API.getProduct(productId)
