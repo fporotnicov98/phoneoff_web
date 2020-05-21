@@ -2,6 +2,7 @@ import React from 'react'
 import Goods from './Goods'
 import {connect} from 'react-redux'
 import {getPhones} from '../../../redux/goodsReducer'
+import {addToCart} from '../../../redux/cartReducer'
 import { searchPhones } from '../SortFilterContainer/SortFilterContainer'
 
 
@@ -30,4 +31,4 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps,{getPhones})(GoodsContainer)
+export default connect(mapStateToProps,{getPhones,addToCart})(GoodsContainer)

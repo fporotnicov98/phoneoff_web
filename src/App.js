@@ -5,7 +5,7 @@ import Footer from './components/Footer/Footer';
 import Catalog from './components/Catalog/Catalog';
 import { Route, BrowserRouter, Switch } from 'react-router-dom';
 import Personal from './components/Personal/Personal';
-import Basket from './components/Basket/Basket';
+import BasketContainer from './components/Basket/BasketContainer';
 import Compare from './components/Compare/Compare';
 import HeaderContainer from './components/Header/HeaderContainer';
 import ProductContainer  from './components/Product/ProductContainer';
@@ -22,7 +22,7 @@ function App() {
               <Route exact path='/' render={() => (<Catalog />)} />
               <Route path='/personal' render={() => (<Personal />)} />
               <Route path='/product/:productId?' render={() => (<ProductContainer/>)} />
-              <Route path='/basket' render={() => (<Basket />)} />
+              <Route path='/basket' render={() => (<BasketContainer />)} />
               <Route path='/compare' render={() => (<Compare />)} />
             </Switch>
           </div>

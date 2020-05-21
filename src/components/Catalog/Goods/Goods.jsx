@@ -4,6 +4,7 @@ import { NavLink } from 'react-router-dom'
 
 
 const Goods = (props) => {
+    const {id,Cost,Name,Image} = props.phones
     return (
         <div className={style.product}>
             <div className={style.product__row}>
@@ -19,7 +20,7 @@ const Goods = (props) => {
                                     <div className={style.desc}>
                                         <div className={style.price}>{prod.Cost} руб</div>
                                         <div className={style.basket}>
-                                            <a href="#s"><i className="fas fa-shopping-cart basket-ico"></i></a>
+                                            <button ><a href="#s"><i className="fas fa-shopping-cart basket-ico"></i></a></button>
                                         </div>
                                     </div>
                                 </div>
