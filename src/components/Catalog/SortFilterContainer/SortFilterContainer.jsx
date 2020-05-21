@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import {setFilter} from '../../../redux/filterReducer'
+import { setFilter } from '../../../redux/filterReducer'
 import SortFilter from './SortFilter'
 import orderBy from 'lodash/orderBy'
 
@@ -16,11 +16,11 @@ const sortBy = (phones, filterBy) => {
   }
 };
 const searchFilter = (phones, searchQuery) =>
-  phones.filter( o =>o.Name.toLowerCase().indexOf(searchQuery.toLowerCase()) >= 0);
+  phones.filter(o => o.Name.toLowerCase().indexOf(searchQuery.toLowerCase()) >= 0);
 
 export const searchPhones = (phones, filterBy, searchQuery) => {
-    return sortBy(searchFilter(phones, searchQuery), filterBy);
-  };
+  return sortBy(searchFilter(phones, searchQuery), filterBy);
+};
 
 
 
@@ -29,4 +29,4 @@ const mapStateToProps = (state) => {
     filterBy: state.filter.filterBy
   }
 }
-export default connect(mapStateToProps,{setFilter})(SortFilter);
+export default connect(mapStateToProps, { setFilter })(SortFilter);

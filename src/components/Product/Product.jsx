@@ -26,7 +26,7 @@ const Product = (props) => {
                     <div class="product__row">
                         <div class="slider">
                             <div class="slider__block">
-                                <img src={`data:image/png;base64,${props.product.Image}`} />
+                                <img src={`data:image/png;base64,${props.product.Image}`} alt=''/>
                             </div>
                         </div>
                         <div class="product__info">
@@ -34,9 +34,9 @@ const Product = (props) => {
                                 <div class="color">
                                     <div class="color__title">Цвет</div>
                                     <div className="color__items">
-                                        <a class="color__item color__item--active" id="color-item-red" href="#s"></a>
-                                        <a class="color__item" id="color-item-grey" href="#s"></a>
-                                        <a class="color__item" id="color-item-blue" href="#s"></a>
+                                        <a class="color__item color__item--active" id="color-item-red" href="#s">{null}</a>
+                                        <a class="color__item" id="color-item-grey" href="#s">{null}</a>
+                                        <a class="color__item" id="color-item-blue" href="#s">{null}</a>
                                     </div>
 
                                 </div>

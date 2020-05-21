@@ -8,10 +8,10 @@ const Catalog = () => {
     return (
         <div className={style.catalog__row}>
             <div className={style.catalog__minBlock}>
-                <SortFilterContainer />
-                <Filter />  
+                <Filter />
             </div>
             <div className={style.catalog__maxBlock}>
+                <SortFilterContainer />
                 <GoodsContainer />
             </div>
         </div>

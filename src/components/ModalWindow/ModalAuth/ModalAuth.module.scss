@@ -108,10 +108,9 @@
       font-size: 15px;
       line-height: 1.4;
       color: #4272d7;
-    }
-
-    .hov1:hover {
-      text-decoration: underline;
+      &:hover {
+        text-decoration: underline;
+      }
     }
   }
 }

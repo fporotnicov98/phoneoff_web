@@ -1,0 +1,19 @@
+.buttons {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 20px;
+}
+
+.btn {
+    color: #282829;
+    padding: 10px 15px;
+    border-radius: 15px;
+    font-weight: bold;
+    box-shadow: 0 2px 2px #6e6e6e;
+    margin-left: 40px;
+    &:hover {
+        background-color: #DADADA;
+    }
+}

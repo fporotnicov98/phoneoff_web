@@ -3,7 +3,7 @@ import style from './Header.module.scss'
 import logo from './../image/logo.png';
 import { NavLink } from 'react-router-dom';
 import ModalAuth from '../ModalWindow/ModalAuth/ModalAuth'
-import ModalRegister from '../ModalWindow/ModalRegister/ModalRegister';
+// import ModalRegister from '../ModalWindow/ModalRegister/ModalRegister';
 
 
 class Header extends React.Component {
@@ -29,7 +29,7 @@ class Header extends React.Component {
         return (
             <header className={style["header"]}>
                 <div className={style["container"]}>
-                    <div class={style["header__row"]}>
+                    <div className={style["header__row"]}>
                         <div className={style["header__search"]}>
                             <form className={style["header__form"]}>
                                 <input className={style["header__search-input"]} type="search" placeholder="Поиск" onChange={e => this.props.setSearchQuery(e.target.value)} value={this.props.searchQuery}></input>

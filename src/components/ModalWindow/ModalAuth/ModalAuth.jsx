@@ -1,7 +1,7 @@
 import React from 'react'
 import style from './ModalAuth.module.scss'
 import { NavLink } from 'react-router-dom';
-import ModalRegister from '../ModalRegister/ModalRegister';
+// import ModalRegister from '../ModalRegister/ModalRegister';
 
 
 class ModalAuth extends React.Component {
@@ -34,11 +34,11 @@ class ModalAuth extends React.Component {
                             <button className={style['login-btn']}><NavLink to='/personal'>Войти</NavLink></button>
                             <div className={style['block1']}>
                                 <span className={style['txt1']}>Забыли</span>
-                                <a href="#s" className={style['txt2', 'hov1']}>Пароль?</a>
+                                <a href="#s" className={style['txt2']}>Пароль?</a>
                             </div>
                             <div className={style['block2']}>
                                 <span className={style['txt1']}>Не зарегистрированы?</span>
-                                <button className={style['txt2', 'hov1']}>Регистрация</button>
+                                <button className={style['txt2']}>Регистрация</button>
                             </div>
                         </form>
                     </div>

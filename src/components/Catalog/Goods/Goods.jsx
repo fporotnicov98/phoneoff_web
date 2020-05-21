@@ -14,7 +14,7 @@ const Goods = (props) => {
                                 <div className={style.block}>
                                     <div className={style.title}>{prod.Name}</div>
                                     <div className={style.image}>
-                                        <img src={`data:image/png;base64,${prod.Image}`}></img>
+                                        <img src={`data:image/png;base64,${prod.Image}`} alt=''></img>
                                     </div>
                                     <div className={style.desc}>
                                         <div className={style.price}>{prod.Cost} руб</div>
