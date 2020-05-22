@@ -18,7 +18,7 @@ const Product = (props) => {
                 <div class="product__header">
                     <div class="product__title">Мобильный телефон {props.product.Name}</div>
                     <div class="product__buttons">
-                        <a class="product__button-compare" href="#s">Сравнить</a>
+                        <button class="product__button-compare" onClick = {() => props.addToCompare(props.product)} >Сравнить</button>
                         <a class="product__button-like" href="#s">В избранное</a>
                     </div>
                 </div>
@@ -53,7 +53,7 @@ const Product = (props) => {
                             </div>
                             <div class="basket">
                                 <div class="basket__price">{props.product.Cost} руб</div>
-                                <button onClick = {() => props.addToCart(props.product)} class="basket__btn">Добавить в корзину {props.addedCount > 0 && `( ${props.addedCount} )`}</button>
+                                <button onClick = {() => props.addToCart(props.product)} class="basket__btn">Добавить в корзину </button>
                             </div>
                         </div>
                     </div>

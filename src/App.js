@@ -6,9 +6,9 @@ import Catalog from './components/Catalog/Catalog';
 import { Route, BrowserRouter, Switch } from 'react-router-dom';
 import Personal from './components/Personal/Personal';
 import BasketContainer from './components/Basket/BasketContainer';
-import Compare from './components/Compare/Compare';
 import HeaderContainer from './components/Header/HeaderContainer';
 import ProductContainer  from './components/Product/ProductContainer';
+import CompareContainer from './components/Compare/CompareContainer';
 
 function App() {
   return (
@@ -22,7 +22,7 @@ function App() {
               <Route path='/personal' render={() => (<Personal />)} />
               <Route path='/product/:productId?' render={() => (<ProductContainer/>)} />
               <Route path='/basket' render={() => (<BasketContainer />)} />
-              <Route path='/compare' render={() => (<Compare />)} />
+              <Route path='/compare' render={() => (<CompareContainer />)} />
             </Switch>
           </div>
         </div>

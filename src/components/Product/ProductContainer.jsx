@@ -5,7 +5,7 @@ import {getProduct} from '../../redux/productReducer'
 import { compose } from 'redux'
 import { withRouter } from 'react-router-dom'
 import {addToCart} from '../../redux/cartReducer'
-
+import {addToCompare} from '../../redux/compareReducer'
 
 
 class ProductContainer extends React.Component{
@@ -30,11 +30,10 @@ const mapStateToProps = (state) => {
     return {
         phones: state.catalogPage.phones,
         product:state.productPage.product,
-        addedCount: state.cart.items.reduce((count, phone,item) => count + (phone.id ===  item.id  ? 1 : 0), 0),
     }
 }
 
 export default compose(
     withRouter,
-    connect(mapStateToProps,{getProduct,addToCart})
+    connect(mapStateToProps,{getProduct,addToCart,addToCompare})
 )(ProductContainer)
