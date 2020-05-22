@@ -17,10 +17,10 @@ const Basket = (props) => {
                             <div className={style.photo}>
                                 <NavLink to={'/product/' + prod.Id}><img src={`data:image/png;base64,${prod.Image}`} alt="" /></NavLink>
                             </div>
-                            <div className={style.nameGoods}><label for="option1">Мобильный телефон {prod.Name}</label></div>
+                            <div className={style.nameGoods}>Мобильный телефон {prod.Name}</div>
                             <div className={style.amount}>
                                 <div className={style.plus}><i class="fas fa-plus"></i></div>
-                                <div className={style.count}>{props.addedCount}</div>
+                                <div className={style.count}><span>{props.addedCount}</span></div>
                                 <div className={style.minus}><i class="fas fa-minus"></i></div>
                             </div>
                             <div className={style.price}>{prod.Cost} р</div>
