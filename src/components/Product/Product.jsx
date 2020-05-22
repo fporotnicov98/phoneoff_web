@@ -53,7 +53,7 @@ const Product = (props) => {
                             </div>
                             <div class="basket">
                                 <div class="basket__price">{props.product.Cost} руб</div>
-                                <button onClick = {() => props.addToCart(props.product)} class="basket__btn">Добавить в корзину {props.addedCount > 0 && `(${props.addedCount})`}</button>
+                                <button onClick = {() => props.addToCart(props.product)} class="basket__btn">Добавить в корзину {props.addedCount > 0 && `( ${props.addedCount} )`}</button>
                             </div>
                         </div>
                     </div>

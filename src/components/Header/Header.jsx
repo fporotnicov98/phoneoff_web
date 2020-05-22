@@ -52,7 +52,7 @@ class Header extends React.Component {
                                 onClose={() => this.closeModal()}
                             /> */}
                             <button className={style["header__button"]}><NavLink to='/compare'>Сравнение</NavLink></button>
-                            <button className={style["header__button"]}><NavLink to='/basket'>Корзина</NavLink></button>
+                            <button className={style["header__button"]}><NavLink to='/basket'>Корзина <span>{this.props.addedCount > 0 && `${this.props.addedCount}`}</span></NavLink></button>
                         </div>
                     </div>
                 </div>
