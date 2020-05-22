@@ -1,13 +1,28 @@
 import React from 'react'
 import style from './ModalAuth.module.scss'
-import { NavLink } from 'react-router-dom';
+// import { NavLink } from 'react-router-dom';
 // import ModalRegister from '../ModalRegister/ModalRegister';
+import $ from 'jquery'
+import { findDOMNode } from 'react-dom';
+import { NavLink } from 'react-router-dom';
 
 
 class ModalAuth extends React.Component {
     constructor(props) {
         super(props);
         this.state = { isModalOpen: false };
+    }
+    clickSwitchingLoginAndRegister() {
+        const frame = findDOMNode(this.refs.frame);
+        const signin = findDOMNode(this.refs.signin);
+        const signup = findDOMNode(this.refs.signup);
+        const signupInactive = findDOMNode(this.refs.signupInactive);
+        const signinActive = findDOMNode(this.refs.signinActive);
+        $(signupInactive).toggleClass(style["signup-active"]);
+        $(signinActive).toggleClass(style["signin-inactive"]);
+        $(signup).toggleClass(style["form-signup-left"]);
+        $(signin).toggleClass(style["form-signin-left"]);
+        $(frame).toggleClass(style["frame-long"]);
     }
     openModal() {
         this.setState({ isModalOpen: true });
@@ -21,26 +36,36 @@ class ModalAuth extends React.Component {
         return (
             <>
                 <div className={style["bg"]}>
-                    <div className={style["modal-dialog"]}>
+                    <div ref='frame' className={style["frame"]}>
                         <button onClick={e => this.close(e)} className={style["close-auth"]}>&times;</button>
-                        <form action="">
-                            <span className={style['title']}>Авторизация</span>
-                            <div className={style['wrap-input']}>
-                                <input type="text" className={style['login']} placeholder='Email или логин' />
-                            </div>
-                            <div className={style['wrap-input']}>
-                                <input type="password" className={style['password']} placeholder='Пароль' />
-                            </div>
-                            <button className={style['login-btn']}><NavLink to='/personal'>Войти</NavLink></button>
-                            <div className={style['block1']}>
-                                <span className={style['txt1']}>Забыли</span>
-                                <a href="#s" className={style['txt2']}>Пароль?</a>
-                            </div>
-                            <div className={style['block2']}>
-                                <span className={style['txt1']}>Не зарегистрированы?</span>
-                                <button className={style['txt2']}>Регистрация</button>
-                            </div>
-                        </form>
+                        <div className={style["nav"]}>
+                            <ul className={style["links"]}>
+                                <li ref='signinActive' className={style["signin-active"]}><a href='#s' onClick={() => this.clickSwitchingLoginAndRegister()} className={style["btn"]}>Вход</a></li>
+                                <li ref='signupInactive' className={style["signup-inactive"]}><a href='#s' onClick={() => this.clickSwitchingLoginAndRegister()} className={style["btn"]}>Регистрация</a></li>
+                            </ul>
+                        </div>
+                        <div >
+                            <form ref='signin' className={style["form-signin"]} action="" method="post" name="form">
+                                <label for="username">Email или логин</label>
+                                <input className={style["form-styling"]} required='required' type="text" name="username" />
+                                <label for="password">Пароль</label>
+                                <input className={style["form-styling"]} required='required' type="password" name="password" />
+                                <input type="checkbox" id="checkbox" />
+                                <label for="checkbox" ><span className={style["ui"]}></span><p>Запомнить меня</p></label>
+                                <NavLink className={style["btn-signin"]} to='/personal'>Войти</NavLink>
+                            </form>
+                            <form ref='signup' className={style["form-signup"]} action="" method="post" name="form">
+                                <label for="fullname">ФИО</label>
+                                <input className={style["form-styling"]} type="text" name="fullname" />
+                                <label for="email">Email</label>
+                                <input className={style["form-styling"]} type="text" name="email" />
+                                <label for="password">Пароль</label>
+                                <input className={style["form-styling"]} type="text" name="password" />
+                                <label for="confirmpassword">Повторите пароль</label>
+                                <input className={style["form-styling"]} type="text" name="confirmpassword" />
+                                <NavLink className={style["btn-signup"]} to='/personal'>Зарегистрироваться</NavLink>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </>

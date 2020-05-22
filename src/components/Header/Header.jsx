@@ -47,10 +47,6 @@ class Header extends React.Component {
                                 isOpen={this.state.isModalOpen}
                                 onClose={() => this.closeModal()}
                             />
-                            {/* <ModalRegister
-                                isOpen={this.state.isModalOpen}
-                                onClose={() => this.closeModal()}
-                            /> */}
                             <button className={style["header__button"]}><NavLink to='/compare'>Сравнение</NavLink></button>
                             <button className={style["header__button"]}><NavLink to='/basket'>Корзина <span>{this.props.addedCount > 0 && `${this.props.addedCount}`}</span></NavLink></button>
                         </div>
