@@ -4,10 +4,10 @@ import {addToCart} from '../../redux/cartReducer'
 import Header from './Header';
 
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
     return {
         searchQuery: state.filter.searchQuery,
-        addedCount: state.cart.items.reduce((count, phone,item) => count + (phone.id ===  item.id  ? 1 : 0), 0),
+        count: state.cart.items.length,
     }  
 }
 

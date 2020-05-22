@@ -1,23 +1,28 @@
 import React from 'react'
 import Goods from './Goods'
-import {connect} from 'react-redux'
-import {getPhones} from '../../../redux/goodsReducer'
-import {addToCart} from '../../../redux/cartReducer'
+import { connect } from 'react-redux'
+import { getPhones } from '../../../redux/goodsReducer'
+import { addToCart } from '../../../redux/cartReducer'
 import { searchPhones } from '../SortFilterContainer/SortFilterContainer'
+import style from './Goods.module.scss'
 
 
-class GoodsContainer extends React.Component{
+class GoodsContainer extends React.Component {
 
     componentDidMount() {
         this.props.getPhones()
     }
 
-    render(){
-        return(
+    render() {
+        const { phones } = this.props
+        return (
             <>
-                <Goods {...this.props}
-                phones = {this.props.phones}
-                />
+                <div className={style.product}>
+                    <div className={style.product__row}>
+                        {phones.map((phone, i) => <Goods key={i} {...phone} addToCart={this.props.addToCart} />)}
+                    </div>
+                </div>
+
             </>
         )
     }
@@ -27,8 +32,9 @@ class GoodsContainer extends React.Component{
 
 const mapStateToProps = (state) => {
     return {
-        phones: state.catalogPage.phones && searchPhones(state.catalogPage.phones,state.filter.filterBy,state.filter.searchQuery)
+        filterPhones: state.catalogPage.phones && searchPhones(state.catalogPage.phones, state.filter.filterBy, state.filter.searchQuery),
+        phones: state.catalogPage.phones
     }
 }
 
-export default connect(mapStateToProps,{getPhones,addToCart})(GoodsContainer)
+export default connect(mapStateToProps, { getPhones, addToCart })(GoodsContainer)
