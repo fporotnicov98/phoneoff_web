@@ -4,7 +4,6 @@ import { connect } from 'react-redux'
 import { getPhones } from '../../../redux/goodsReducer'
 import { addToCart } from '../../../redux/cartReducer'
 import { searchPhones } from '../SortFilterContainer/SortFilterContainer'
-import style from './Goods.module.scss'
 
 
 class GoodsContainer extends React.Component {
@@ -14,14 +13,9 @@ class GoodsContainer extends React.Component {
     }
 
     render() {
-        const { phones } = this.props
         return (
             <>
-                <div className={style.product}>
-                    <div className={style.product__row}>
-                        {phones.map((phone, i) => <Goods key={i} {...phone} addToCart={this.props.addToCart} />)}
-                    </div>
-                </div>
+                <Goods {...this.props}/>
 
             </>
         )
@@ -33,7 +27,6 @@ class GoodsContainer extends React.Component {
 const mapStateToProps = (state) => {
     return {
         filterPhones: state.catalogPage.phones && searchPhones(state.catalogPage.phones, state.filter.filterBy, state.filter.searchQuery),
-        phones: state.catalogPage.phones
     }
 }
 

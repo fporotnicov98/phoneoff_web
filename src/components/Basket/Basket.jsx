@@ -11,20 +11,20 @@ const Basket = (props) => {
                 <NavLink to="/">Вернуться к покупкам</NavLink>
             </div>
             {
-                props.uniqItems.map(prod => <div key={prod.Id}>
+                props.uniqItems.map(item => <div key={item.Id}>
                     <div className={style.body}>
                         <div className={style.goods}>
                             <div className={style.photo}>
-                                <NavLink to={'/product/' + prod.Id}><img src={`data:image/png;base64,${prod.Image}`} alt="" /></NavLink>
+                                <NavLink to={'/product/' + item.Id}><img src={`data:image/png;base64,${item.Image}`} alt="" /></NavLink>
                             </div>
-                            <div className={style.nameGoods}>Мобильный телефон {prod.Name}</div>
+                            <div className={style.nameGoods}>Мобильный телефон {item.Name}</div>
                             <div className={style.amount}>
-                                <div className={style.plus}><i class="fas fa-plus"></i></div>
-                                <div className={style.count}><span>{props.addedCount}</span></div>
+                                <button className={style.plus} onClick = {() => props.addToCart(item)}><i class="fas fa-plus"></i></button>
+                                <div className={style.count}><span>{props.items.reduce((count, phone) => count + (phone.Id ===  item.Id  ? 1 : 0), 0)}</span></div>
                                 <div className={style.minus}><i class="fas fa-minus"></i></div>
                             </div>
-                            <div className={style.price}>{prod.Cost} р</div>
-                            <div className={style.delete}><button onClick = {() => props.removeFromCart(prod.Id)} class="fas fa-trash"></button></div>
+                            <div className={style.price}>{item.Cost} р</div>
+                            <div className={style.delete}><button onClick = {() => props.removeFromCart(item.Id)} class="fas fa-trash"></button></div>
                         </div>
                     </div>
                 </div>)
