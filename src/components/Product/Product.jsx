@@ -1,7 +1,7 @@
 import React from 'react'
 import './Product.scss'
 import Preloader from '../commons/Preloader'
-import { NavLink } from 'react-router-dom'
+import { NavLink} from 'react-router-dom'
 
 const Product = (props) => {
     if (!props.product) {
@@ -18,8 +18,7 @@ const Product = (props) => {
                 <div class="product__header">
                     <div class="product__title">Мобильный телефон {props.product.Name}</div>
                     <div class="product__buttons">
-                        <button class="product__button-compare" onClick = {() => props.addToCompare(props.product)}>Сравнить</button>
-                        <a class="product__button-like" href="#s">В избранное</a>
+                        <NavLink to='/compare'><button class="product__button-compare" onClick = {() => props.compareLength <= 2 ? props.addToCompare(props.product) : alert("Уже сравнивается 3 товара, удалите товар из сравнивания, чтобы добавить новый") }>Сравнить</button></NavLink>
                     </div>
                 </div>
                 <div class="product__body">

@@ -30,6 +30,7 @@ const mapStateToProps = (state) => {
     return {
         phones: state.catalogPage.phones,
         product:state.productPage.product,
+        compareLength: state.comparePage.items.length
     }
 }
 
