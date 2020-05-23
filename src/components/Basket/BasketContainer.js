@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import {removeFromCart,addToCart} from '../../redux/cartReducer'
+import {removeFromCart,addToCart,removeProdFromCart} from '../../redux/cartReducer'
 import Basket from './Basket'
 import uniqBy from 'lodash/uniqBy'
 
@@ -10,4 +10,4 @@ const mapStateToProps = ({ cart }) => ({
     uniqItems: uniqBy(cart.items, o => o.Id),
   });
 
-export default connect(mapStateToProps,{removeFromCart,addToCart})(Basket)
+export default connect(mapStateToProps,{removeFromCart,addToCart,removeProdFromCart})(Basket)

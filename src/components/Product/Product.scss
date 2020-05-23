@@ -165,7 +165,7 @@
 }
 
 .basket {
-	width: 60%;
+	width: 80%;
 	padding-bottom: 30px;
 	margin: 0 auto;
 	display: flex;
@@ -174,7 +174,7 @@
 }
 
 .basket__price {
-	font-size: 2em;
+	font-size: 1.9em;
 	font-weight: bold;
 }
 
@@ -189,4 +189,11 @@
 		transform: translateY(-4px);
 		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2), 0 16px 20px rgba(0, 0, 0, 0.2);
 	}
+}
+
+.basket__in{
+	background-color: #000;
+	color: white;
+	padding: 15px 30px 15px 30px;
+	border-radius: 15px;
 }

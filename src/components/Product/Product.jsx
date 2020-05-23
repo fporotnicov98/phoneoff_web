@@ -18,7 +18,7 @@ const Product = (props) => {
                 <div class="product__header">
                     <div class="product__title">Мобильный телефон {props.product.Name}</div>
                     <div class="product__buttons">
-                        <NavLink to='/compare'><button class="product__button-compare" onClick = {() => props.compareLength <= 2 ? props.addToCompare(props.product) : alert("Уже сравнивается 3 товара, удалите товар из сравнивания, чтобы добавить новый") }>Сравнить</button></NavLink>
+                        <NavLink to='/compare'><button class="product__button-compare" onClick = {() => props.compare.length <= 1 ? props.addToCompare(props.product) : alert("Вы уже сравниваете 2 товара!") }>Сравнить</button></NavLink>
                     </div>
                 </div>
                 <div class="product__body">
@@ -51,8 +51,12 @@ const Product = (props) => {
                                 </div>
                             </div>
                             <div class="basket">
-                                <div class="basket__price">{props.product.Cost} руб</div>
-                                <button onClick = {() => props.addToCart(props.product)} class="basket__btn">Добавить в корзину </button>
+                                <div class="basket__price">Цена: {props.product.Cost} руб</div>
+                                {
+                                props.cart.some(item => item.Id === props.product.Id) 
+                                ? <i className="basket__in">В корзине</i> 
+                                : <button onClick = {() => props.addToCart(props.product)} className="basket__btn">Добавить в корзину</button>
+                                }
                             </div>
                         </div>
                     </div>
