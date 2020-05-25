@@ -4,6 +4,7 @@ import { NavLink } from 'react-router-dom'
 
 
 const Basket = (props) => {
+    let date = new Date().toDateString();
     return (
         <div className={style.basket__row}>
             <div className={style.title}>
@@ -31,7 +32,7 @@ const Basket = (props) => {
             }
             <div className={style.checkout}>
                 <div className={style.summary}>Итого {props.count} товаров на сумму: {props.totalPrice} р</div>
-                <NavLink to='/basket' className={style.btn__check}>Оформить заказ</NavLink>
+                <button className={style.btn__check} onClick = {props.addOrder(props.itemsId,1,date,props.totalPrice)}>Оформить заказ</button>
             </div>
         </div>
     )
