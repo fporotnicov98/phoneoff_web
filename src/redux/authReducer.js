@@ -5,6 +5,7 @@ import API from '../API/api'
 let initial = {
     email: null,
     isAuth: false,
+    token: null,
 }
 const authReducer = (state = initial, action) => {
     switch (action.type) {
@@ -13,6 +14,11 @@ const authReducer = (state = initial, action) => {
                 ...state,
                 ...action.payload
             }
+        case "SET_TOKEN":
+            return{
+                ...state,
+                token : action.payload
+            }
         default:
             return state;
 
@@ -20,6 +26,7 @@ const authReducer = (state = initial, action) => {
 }
 
 export const setAuthData = (email, isAuth) => ({ type: "SET_AUTH_DATA", payload: {  email, isAuth } })
+export const setToken = (token) => ({type: "SET_TOKEN", payload : token})
 
 
 export const getAuth = () =>  (dispatch) => {
@@ -35,6 +42,7 @@ export const setLogin = (email,password) => dispatch => {
     API.login(email,password)
     .then(response => {
         if (response.data.username){
+            dispatch(setToken(response.data.access_token))
             dispatch(setAuthData(response.data.username,true))
         }
     })
