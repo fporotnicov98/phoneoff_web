@@ -1,17 +1,29 @@
 import React from 'react'
 import style from './ModalAuth.module.scss'
-// import { NavLink } from 'react-router-dom';
-// import ModalRegister from '../ModalRegister/ModalRegister';
 import $ from 'jquery'
 import { findDOMNode } from 'react-dom';
-import { NavLink } from 'react-router-dom';
+import {setRegistration,setLogin,getAuth} from '../../../redux/authReducer'
+import { connect } from 'react-redux';
+import { Redirect } from "react-router-dom";
 
 
 
 class ModalAuth extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { isModalOpen: false };
+        this.state = { 
+            isModalOpen: false,
+            emailLog: '',
+            emailReg: '',
+            loginReg:'',
+            passwordLog: '',
+            passwordReg: '',
+            fio: '',
+            address: '',
+            phoneNum: ''
+
+
+         };
     }
     clickSwitchingLoginAndRegister() {
         const frame = findDOMNode(this.refs.frame);
@@ -31,7 +43,45 @@ class ModalAuth extends React.Component {
     closeModal() {
         this.setState({ isModalOpen: false });
     }
+
+    setFio = (e) => {
+        this.setState({fio: e.target.value})
+    }
+    setEmailReg = (e) => {
+        this.setState({emailReg:e.target.value})
+    }
+    setPasswordReg = (e) => {
+        this.setState({passwordReg:e.target.value})
+    }
+    setPhoneNum = (e) => {
+        this.setState({phoneNum:e.target.value})
+    }
+    setAddress = (e) => {
+        this.setState({address:e.target.value})
+    }
+    setLoginReg = (e) => {
+        this.setState({loginReg:e.target.value})
+    }
+    onSubmitReg = (e) =>{
+        this.props.setRegistration(this.state.emailReg,this.state.loginReg,this.state.passwordReg,this.state.fio,this.state.address,this.state.phoneNum)
+        e.preventDefault();
+      }
+    
+    setEmailLog = (e) => {
+        this.setState({emailLog:e.target.value})
+    }
+    setPasswordLog= (e) => {
+        this.setState({passwordLog:e.target.value})
+    }
+    onSubmitLog = (e) =>{
+        this.props.setLogin(this.state.emailLog,this.state.passwordLog)
+        this.props.getAuth()
+        e.preventDefault();
+      }
+
+    
     render() {
+        if (this.props.isAuth === true) return <Redirect to = {'/personal'}></Redirect> 
         if (this.props.isOpen === false) return null;
 
         return (
@@ -46,27 +96,27 @@ class ModalAuth extends React.Component {
                             </ul>
                         </div>
                         <div >
-                            <form ref='signin' className={style["form-signin"]} action="" method="post" name="form">
-                                <label for="username">Email</label>
-                                <input className={style["form-styling"]} required='required' type="text" name="username" />
-                                <label for="password">Пароль</label>
-                                <input className={style["form-styling"]} required='required' type="password" name="password" />
-                                <input type="checkbox" id="checkbox" />
-                                <label for="checkbox" ><span className={style["ui"]}></span><p>Запомнить меня</p></label>
-                                <NavLink className={style["btn-signin"]} to='/personal'>Войти</NavLink>
-                            </form>
-                            <form ref='signup' className={style["form-signup"]} action="" method="post" name="form">
-                                <label for="fullname">ФИО</label>
-                                <input className={style["form-styling"]} type="text" name="fullname" />
+                            <form ref='signin' className={style["form-signin"]} onSubmit={this.onSubmitLog} >
                                 <label for="email">Email</label>
-                                <input className={style["form-styling"]} type="text" name="email" />
-                                <label for="phone">Номер телефона</label>
-                                <input className={style["form-styling"]} type="number" name="phone" />
-                                <label for="adress">Адрес</label>
-                                <input className={style["form-styling"]} type="text" name="adress" />
+                                <input className={style["form-styling"]} required='required' type="email" name="email"  value={this.state.emailLog} onChange = {this.setEmailLog} />
                                 <label for="password">Пароль</label>
-                                <input className={style["form-styling"]} type="password" name="password" />
-                                <button className={style["btn-signup"]} >Зарегистрироваться</button>
+                                <input className={style["form-styling"]} required='required' type="password" name="password" value={this.state.passwordLog} onChange = {this.setPasswordLog}  />
+                                <input className={style["btn-signin"]} type="submit" value = "Войти"></input>
+                            </form>
+                            <form ref='signup' className={style["form-signup"]} onSubmit={this.onSubmitReg}>
+                                <label for="fullname">ФИО</label>
+                                <input className={style["form-styling"]} type="text" name="fullname" value={this.state.fio} onChange = {this.setFio} />
+                                <label for="fullname">Логин</label>
+                                <input className={style["form-styling"]} type="text" name="login" value={this.state.loginReg} onChange = {this.setLoginReg} />
+                                <label for="email">Email</label>
+                                <input className={style["form-styling"]} type="text" name="email" value={this.state.emailReg} onChange = {this.setEmailReg}/>
+                                <label for="phone">Номер телефона</label>
+                                <input className={style["form-styling"]} type="number" name="phone" value={this.state.phoneNum} onChange = {this.setPhoneNum} />
+                                <label for="address">Адрес</label>
+                                <input className={style["form-styling"]} type="text" name="address" value={this.state.address} onChange = {this.setAddress} />
+                                <label for="password">Пароль</label>
+                                <input className={style["form-styling"]} type="password" name="password" value={this.state.passwordFromReg} onChange = {this.setPasswordReg}/>
+                                <input className={style["btn-signup"]} type="submit" value = "Зарегистрироваться" />
                             </form>
                         </div>
                     </div>
@@ -84,6 +134,10 @@ class ModalAuth extends React.Component {
     }
 }
 
+const mapStateToProps = state => {
+    return {
+        isAuth: state.auth.isAuth
+    }
+}
 
-
-export default ModalAuth;
+export default connect(mapStateToProps,{setRegistration,setLogin,getAuth})(ModalAuth)

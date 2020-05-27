@@ -26,25 +26,28 @@ export const getAuth = () =>  (dispatch) => {
         API.getAuth()
         .then(response => {
             if (response.data.resultCode === 0) {
-                let { email } = response.data.data;
-                dispatch(setAuthData( email,true))
+                let { email } = response.data;
+                dispatch(setAuthData( email, true))
             }
         })
     }
 export const setLogin = (email,password) => dispatch => {
     API.login(email,password)
     .then(response => {
-        if (response.data.resultCode === 0){
-            dispatch(getAuth())
+        if (response.data.username){
+            dispatch(setAuthData(response.data.username,true))
         }
     })
 }
-export const logout = () => dispatch => {
-    API.logout()
-    .then(response => {
-        if (response.data.resultCode === 0){
-            dispatch(setAuthData(null,false))
-        }
-    })
+export const setRegistration = (email,login,password,fio,address,phoneNumber) => dispatch => {
+    API.addRegData(email,login,password,fio,address,phoneNumber)
 }
+// export const logout = () => dispatch => {
+//     API.logout()
+//     .then(response => {
+//         if (response.data.resultCode === 0){
+//             dispatch(setAuthData(null,false))
+//         }
+//     })
+// }
 export default authReducer
