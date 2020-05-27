@@ -46,7 +46,7 @@ class ModalAuth extends React.Component {
                         </div>
                         <div >
                             <form ref='signin' className={style["form-signin"]} action="" method="post" name="form">
-                                <label for="username">Email или логин</label>
+                                <label for="username">Email</label>
                                 <input className={style["form-styling"]} required='required' type="text" name="username" />
                                 <label for="password">Пароль</label>
                                 <input className={style["form-styling"]} required='required' type="password" name="password" />
