@@ -13,7 +13,9 @@ const API = {
     },
     getProduct(productId){
         return instanse.get(`GetPhone/?id=${productId}`)
-    }
+    }, 
+    addOrder(prodId,userId,date,price){
+        return instanse.post(`addOrder`, {prodId,userId,date,price})
+    },
 }
-
 export default API

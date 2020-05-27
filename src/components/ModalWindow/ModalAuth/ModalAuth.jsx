@@ -7,6 +7,7 @@ import { findDOMNode } from 'react-dom';
 import { NavLink } from 'react-router-dom';
 
 
+
 class ModalAuth extends React.Component {
     constructor(props) {
         super(props);
@@ -46,7 +47,7 @@ class ModalAuth extends React.Component {
                         </div>
                         <div >
                             <form ref='signin' className={style["form-signin"]} action="" method="post" name="form">
-                                <label for="username">Email или логин</label>
+                                <label for="username">Email</label>
                                 <input className={style["form-styling"]} required='required' type="text" name="username" />
                                 <label for="password">Пароль</label>
                                 <input className={style["form-styling"]} required='required' type="password" name="password" />
@@ -63,11 +64,13 @@ class ModalAuth extends React.Component {
                                 <input className={style["form-styling"]} type="text" name="fullname" />
                                 <label for="email">Email</label>
                                 <input className={style["form-styling"]} type="text" name="email" />
+                                <label for="phone">Номер телефона</label>
+                                <input className={style["form-styling"]} type="number" name="phone" />
+                                <label for="adress">Адрес</label>
+                                <input className={style["form-styling"]} type="text" name="adress" />
                                 <label for="password">Пароль</label>
-                                <input className={style["form-styling"]} type="text" name="password" />
-                                <label for="confirmpassword">Повторите пароль</label>
-                                <input className={style["form-styling"]} type="text" name="confirmpassword" />
-                                <NavLink className={style["btn-signup"]} to='/personal'>Зарегистрироваться</NavLink>
+                                <input className={style["form-styling"]} type="password" name="password" />
+                                <button className={style["btn-signup"]} >Зарегистрироваться</button>
                             </form>
                         </div>
                     </div>

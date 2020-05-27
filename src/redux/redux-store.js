@@ -5,6 +5,7 @@ import thunkMiddleware from 'redux-thunk'
 import productReducer from './productReducer'
 import cartReducer from "./cartReducer";
 import compareReducer from './compareReducer'
+import authReducer from "./authReducer";
 
 
 
@@ -13,7 +14,8 @@ let redusers = combineReducers({
     productPage: productReducer,
     filter: filterReducer,
     cart: cartReducer,
-    comparePage: compareReducer
+    comparePage: compareReducer,
+    auth:authReducer
 })
 
 let store = createStore(redusers,applyMiddleware(thunkMiddleware));
