@@ -57,6 +57,10 @@ class ModalAuth extends React.Component {
                             <form ref='signup' className={style["form-signup"]} action="" method="post" name="form">
                                 <label for="fullname">ФИО</label>
                                 <input className={style["form-styling"]} type="text" name="fullname" />
+                                <label for="fullname">ФИО</label>
+                                <input className={style["form-styling"]} type="text" name="fullname" />
+                                <label for="fullname">ФИО</label>
+                                <input className={style["form-styling"]} type="text" name="fullname" />
                                 <label for="email">Email</label>
                                 <input className={style["form-styling"]} type="text" name="email" />
                                 <label for="password">Пароль</label>

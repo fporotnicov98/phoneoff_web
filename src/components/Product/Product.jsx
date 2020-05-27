@@ -1,7 +1,7 @@
 import React from 'react'
 import './Product.scss'
 import Preloader from '../commons/Preloader'
-import { NavLink } from 'react-router-dom'
+import { NavLink} from 'react-router-dom'
 
 const Product = (props) => {
     if (!props.product) {
@@ -51,8 +51,12 @@ const Product = (props) => {
                                 </div>
                             </div>
                             <div class="basket">
-                                <div class="basket__price">{props.product.Cost} руб</div>
-                                <button onClick = {() => props.addToCart(props.product)} class="basket__btn">Добавить в корзину </button>
+                                <div class="basket__price">Цена: {props.product.Cost} руб</div>
+                                {
+                                props.cart.some(item => item.Id === props.product.Id) 
+                                ? <i className="basket__in">В корзине</i> 
+                                : <button onClick = {() => props.addToCart(props.product)} className="basket__btn">Добавить в корзину</button>
+                                }
                             </div>
                         </div>
                     </div>

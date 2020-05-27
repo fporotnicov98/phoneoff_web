@@ -21,7 +21,7 @@ const Basket = (props) => {
                             <div className={style.amount}>
                                 <button className={style.plus} onClick = {() => props.addToCart(item)}><i class="fas fa-plus"></i></button>
                                 <div className={style.count}><span>{props.items.reduce((count, phone) => count + (phone.Id ===  item.Id  ? 1 : 0), 0)}</span></div>
-                                <div className={style.minus}><i class="fas fa-minus"></i></div>
+                                <button className={style.minus}  onClick = {() => props.removeProdFromCart(item.Id)}><i class="fas fa-minus"></i></button>
                             </div>
                             <div className={style.price}>{item.Cost} р</div>
                             <div className={style.delete}><button onClick = {() => props.removeFromCart(item.Id)} class="fas fa-trash"></button></div>

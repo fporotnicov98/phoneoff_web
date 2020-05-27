@@ -6,12 +6,12 @@ import { compose } from 'redux'
 import { withRouter } from 'react-router-dom'
 import {addToCart} from '../../redux/cartReducer'
 import {addToCompare} from '../../redux/compareReducer'
+import uniqBy from 'lodash/uniqBy'
 
 
 class ProductContainer extends React.Component{
 
     componentWillMount(){
-        debugger
         let productId = this.props.match.params.productId
         if (!productId) {
             alert("404")
@@ -30,6 +30,8 @@ const mapStateToProps = (state) => {
     return {
         phones: state.catalogPage.phones,
         product:state.productPage.product,
+        cart:state.cart.items,
+        compare: uniqBy(state.comparePage.items, o => o.Id),
     }
 }
 

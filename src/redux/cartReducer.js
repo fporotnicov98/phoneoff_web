@@ -14,6 +14,18 @@ const cartReducer = (state = init, action) => {
                 ...state,
                 items: state.items.filter(o => o.Id !== action.payload)
             };
+        case 'REMOVE_PROD_FROM_CART':
+            let index = state.items.findIndex(obj => obj.Id === action.payload);
+            let filtered = state.items.filter(obj => obj.Id === action.payload);
+            if (index === -1 || filtered.length === 1) {
+                return {
+                    ...state
+                };
+            }
+            state.items.splice(state.items.findIndex(obj => obj.Id === action.payload), 1);
+            return {
+                ...state
+              };
         default:
             return state;
     }
@@ -21,5 +33,6 @@ const cartReducer = (state = init, action) => {
 
 export const addToCart = product => ({ type: 'ADD_TO_CART', payload: product });
 export const removeFromCart = id => ({ type: 'REMOVE_FROM_CART', payload: id });
+export const removeProdFromCart = id => ({ type: 'REMOVE_PROD_FROM_CART', payload: id });
 
 export default cartReducer
