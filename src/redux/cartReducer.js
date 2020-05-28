@@ -27,7 +27,7 @@ const cartReducer = (state = init, action) => {
             state.items.splice(state.items.findIndex(obj => obj.Id === action.payload), 1);
             return {
                 ...state
-              };
+            };
         default:
             return state;
     }
@@ -37,8 +37,8 @@ export const addToCart = product => ({ type: 'ADD_TO_CART', payload: product });
 export const removeFromCart = id => ({ type: 'REMOVE_FROM_CART', payload: id });
 export const removeProdFromCart = id => ({ type: 'REMOVE_PROD_FROM_CART', payload: id });
 
-export const addOrder = (prodId,userId,date,count) => dispatch => {
-    API.addOrder(prodId,userId,date,count)
+export const addOrder = (prodId, userId, date, count) => dispatch => {
+    API.addOrder(prodId, userId, date, count)
 }
 
 export default cartReducer

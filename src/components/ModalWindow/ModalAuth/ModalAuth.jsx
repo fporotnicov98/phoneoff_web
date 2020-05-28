@@ -70,8 +70,7 @@ class ModalAuth extends React.Component {
         this.setState({ passwordLog: e.target.value })
     }
     onSubmitLog = (e) => {
-        // this.props.setLogin(this.state.emailLog,this.state.passwordLog)
-        this.props.getAuth()
+        this.props.setLogin(this.state.emailLog, this.state.passwordLog)
         e.preventDefault();
     }
 
@@ -94,24 +93,24 @@ class ModalAuth extends React.Component {
                         <div >
                             <form ref='signin' className={style["form-signin"]} onSubmit={this.onSubmitLog} >
                                 <label for="email">Email</label>
-                                <input className={style["form-styling"]} required='required' type="email" name="email" value={this.state.emailLog} onChange={this.setEmailLog} />
+                                <input className={style["form-styling"]} id='email' required='required' type="email" name="email" value={this.state.emailLog} onChange={this.setEmailLog} />
                                 <label for="password">Пароль</label>
-                                <input className={style["form-styling"]} required='required' type="password" name="password" value={this.state.passwordLog} onChange={this.setPasswordLog} />
+                                <input className={style["form-styling"]} id='password' required='required' type="password" name="password" value={this.state.passwordLog} onChange={this.setPasswordLog} />
                                 <input className={style["btn-signin"]} type="submit" value="Войти"></input>
                             </form>
                             <form ref='signup' className={style["form-signup"]} onSubmit={this.onSubmitReg}>
                                 <label for="fullname">ФИО</label>
-                                <input className={style["form-styling"]} type="text" name="fullname" value={this.state.fio} onChange={this.setFio} />
-                                <label for="fullname">Логин</label>
-                                <input className={style["form-styling"]} type="text" name="login" value={this.state.loginReg} onChange={this.setLoginReg} />
+                                <input className={style["form-styling"]} id='fullname' required='required' type="text" name="fullname" value={this.state.fio} onChange={this.setFio} />
+                                <label for="login">Логин</label>
+                                <input className={style["form-styling"]} id='login' required='required' type="text" name="login" value={this.state.loginReg} onChange={this.setLoginReg} />
                                 <label for="email">Email</label>
-                                <input className={style["form-styling"]} type="text" name="email" value={this.state.emailReg} onChange={this.setEmailReg} />
+                                <input className={style["form-styling"]} id='email' required='required' type="email" name="email" value={this.state.emailReg} onChange={this.setEmailReg} />
                                 <label for="phone">Номер телефона</label>
-                                <input className={style["form-styling"]} type="number" name="phone" value={this.state.phoneNum} onChange={this.setPhoneNum} />
+                                <input className={style["form-styling"]} id='phone' required='required' type="number" name="phone" value={this.state.phoneNum} onChange={this.setPhoneNum} />
                                 <label for="address">Адрес</label>
-                                <input className={style["form-styling"]} type="text" name="address" value={this.state.address} onChange={this.setAddress} />
+                                <input className={style["form-styling"]} id='address' required='required' type="text" name="address" value={this.state.address} onChange={this.setAddress} />
                                 <label for="password">Пароль</label>
-                                <input className={style["form-styling"]} type="password" name="password" value={this.state.passwordFromReg} onChange={this.setPasswordReg} />
+                                <input className={style["form-styling"]} id='password' required='required' type="password" name="password" value={this.state.passwordFromReg} onChange={this.setPasswordReg} />
                                 <input className={style["btn-signup"]} type="submit" value="Зарегистрироваться" />
                             </form>
                         </div>

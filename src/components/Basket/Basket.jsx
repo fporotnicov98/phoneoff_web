@@ -20,19 +20,19 @@ const Basket = (props) => {
                             </div>
                             <div className={style.nameGoods}>Мобильный телефон {item.Name}</div>
                             <div className={style.amount}>
-                                <button className={style.plus} onClick = {() => props.addToCart(item)}><i class="fas fa-plus"></i></button>
-                                <div className={style.count}><span>{props.items.reduce((count, phone) => count + (phone.Id ===  item.Id  ? 1 : 0), 0)}</span></div>
-                                <button className={style.minus}  onClick = {() => props.removeProdFromCart(item.Id)}><i class="fas fa-minus"></i></button>
+                                <button className={style.plus} onClick={() => props.addToCart(item)}><i class="fas fa-plus"></i></button>
+                                <div className={style.count}><span>{props.items.reduce((count, phone) => count + (phone.Id === item.Id ? 1 : 0), 0)}</span></div>
+                                <button className={style.minus} onClick={() => props.removeProdFromCart(item.Id)}><i class="fas fa-minus"></i></button>
                             </div>
                             <div className={style.price}>{item.Cost} р</div>
-                            <div className={style.delete}><button onClick = {() => props.removeFromCart(item.Id)} class="fas fa-trash"></button></div>
+                            <div className={style.delete}><button onClick={() => props.removeFromCart(item.Id)} class="fas fa-trash"></button></div>
                         </div>
                     </div>
                 </div>)
             }
             <div className={style.checkout}>
                 <div className={style.summary}>Итого {props.count} товаров на сумму: {props.totalPrice} р</div>
-                <button className={style.btn__check} onClick = {() => props.addOrder(props.itemsId,1,date,props.totalPrice)}>Оформить заказ</button>
+                <button className={style.btn__check} onClick={() => props.addOrder(props.itemsId, 1, date, props.totalPrice)}>Оформить заказ</button>
             </div>
         </div>
     )

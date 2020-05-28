@@ -10,7 +10,7 @@
 .frame {
   z-index: 999;
   position: fixed;
-  height: 400px;
+  height: 370px;
   width: 430px;
   top: 50%;
   left: 50%;
@@ -87,12 +87,10 @@
     padding-right: 37px;
     padding-top: 5px;
     transition: opacity 0.5s ease, transform 0.5s ease;
-    & input,
     & input {
       color: #000000;
       font-size: 13px;
     }
-    & input:focus,
     & input:focus {
       background: rgba(255, 255, 255, 0.9);
       border: none;
@@ -112,7 +110,7 @@
       padding-top: 12px;
       width: 100%;
       margin-top: 23px;
-      transition: all 0.5s ease, top 0.5s ease 0.5s, height 0.5s ease 0.5s, background-color 0.5s ease 0.75s;
+      // transition: all 0.5s ease, top 0.5s ease 0.5s, height 0.5s ease 0.5s, background-color 0.5s ease 0.75s;
     }
   }
   .form-signin-left {
@@ -131,6 +129,16 @@
     left: 400px;
     opacity: 0;
     transition: all 0.5s ease;
+    & input {
+      color: #000000;
+      font-size: 13px;
+    }
+    & input:focus {
+      background: rgba(255, 255, 255, 0.9);
+      border: none;
+      padding-right: 40px;
+      transition: background 0.5s ease;
+    }
     .btn-signup {
       text-transform: uppercase;
       font-size: 13px;
@@ -144,7 +152,7 @@
       padding-top: 12px;
       width: 100%;
       margin-top: 23px;
-      transition: all 0.5s ease, top 0.5s ease 0.5s, height 0.5s ease 0.5s, background-color 0.5s ease 0.75s;
+      // transition: all 0.5s ease, top 0.5s ease 0.5s, height 0.5s ease 0.5s, background-color 0.5s ease 0.75s;
     }
   }
   .form-signup-left {

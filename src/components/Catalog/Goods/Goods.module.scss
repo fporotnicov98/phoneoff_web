@@ -22,10 +22,13 @@
 	justify-content: space-between;
 	padding: 20px;
 	color: #282a2d;
-	&:hover {
-		box-shadow: 0 0 2px #636363;
-		background: #dadada;
-	}
+	// &:hover {
+	// 	box-shadow: 0 0 2px #636363;
+	// 	background: #dadada;
+	// 	.basket button {
+	// 		background: #fff;
+	// 	}
+	// }
 }
 
 .title {
@@ -56,10 +59,27 @@
 
 .basket {
 	button {
-		background: none;
-	}
-	i {
-		font-size: 25px;
-		color: #282a2d;
+		background: #e0e0e0;
+		box-shadow: 0 2px 0 3px #919191, 0 0 0 1px #e3e4e8;
+		border-radius: 7px;
+		width: 54px;
+		height: 31px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		&:active {
+			box-shadow: 0 0 1px 1px #919191;
+			transform: translateY(3px);
+		}
+		&:hover {
+			background: #e0e0e0;
+			i {
+				color: #000;
+			}
+		}
+		i {
+			font-size: 25px;
+			color: rgb(71, 71, 71);
+		}
 	}
 }
