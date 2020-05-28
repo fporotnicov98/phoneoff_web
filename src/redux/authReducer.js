@@ -2,6 +2,7 @@ import API from '../API/api'
 
 
 
+
 let initial = {
     email: null,
     isAuth: false,
@@ -14,11 +15,6 @@ const authReducer = (state = initial, action) => {
                 ...state,
                 ...action.payload
             }
-        case "SET_TOKEN":
-            return{
-                ...state,
-                token : action.payload
-            }
         default:
             return state;
 
@@ -26,15 +22,15 @@ const authReducer = (state = initial, action) => {
 }
 
 export const setAuthData = (email, isAuth) => ({ type: "SET_AUTH_DATA", payload: {  email, isAuth } })
-export const setToken = (token) => ({type: "SET_TOKEN", payload : token})
+export const setToken = (token) => ({type: "SET_TOKEN", payload: token})
 
 
-export const getAuth = () =>  (dispatch) => {
-        API.getAuth()
+
+export const getAuth = (token) =>  (dispatch) => {
+        API.getAuth(token)
         .then(response => {
             if (response.data.resultCode === 0) {
-                let { email } = response.data;
-                dispatch(setAuthData( email, true))
+                dispatch(setAuthData( response.data.name, true))
             }
         })
     }
@@ -43,19 +39,15 @@ export const setLogin = (email,password) => dispatch => {
     .then(response => {
         if (response.data.username){
             dispatch(setToken(response.data.access_token))
-            dispatch(setAuthData(response.data.username,true))
+            dispatch(getAuth(response.data.access_token))
+           
         }
     })
 }
 export const setRegistration = (email,login,password,fio,address,phoneNumber) => dispatch => {
     API.addRegData(email,login,password,fio,address,phoneNumber)
 }
-// export const logout = () => dispatch => {
-//     API.logout()
-//     .then(response => {
-//         if (response.data.resultCode === 0){
-//             dispatch(setAuthData(null,false))
-//         }
-//     })
-// }
+export const logout = () => dispatch => {
+     dispatch(setAuthData(null,false))  
+}
 export default authReducer

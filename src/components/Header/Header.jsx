@@ -33,7 +33,6 @@ class Header extends React.Component {
                         <div className={style["header__search"]}>
                             <form className={style["header__form"]}>
                                 <input className={style["header__search-input"]} type="search" placeholder="Поиск" onChange={e => this.props.setSearchQuery(e.target.value)} value={this.props.searchQuery}></input>
-                                {/* <button className={style["header__search-button"]} onClick = {() => {props.filterNewTitle()}}><i className=" fas fa-search"></i></button> */}
                             </form>
                         </div>
                         <div className={style["header__logo"]}>
@@ -42,11 +41,15 @@ class Header extends React.Component {
                             </NavLink>
                         </div>
                         <div className={style["header__menu"]}>
-                            <button className={style["header__button"]} onClick={() => this.openModal()}><NavLink to=''>Вход</NavLink></button>
+                            {this.props.isAuth === true 
+                            ?  <button className={style["header__button"]} onClick={() => this.openModal()}><NavLink to='/personal'>Личный кабинет</NavLink></button>
+                            :<button className={style["header__button"]} onClick={() => this.openModal()}><NavLink to=''>Вход</NavLink></button>
+                            }
                             <ModalAuth
                                 isOpen={this.state.isModalOpen}
                                 onClose={() => this.closeModal()}
                             />
+                              
                             <button className={style["header__button"]}><NavLink to='/compare'>Сравнение</NavLink></button>
                             <button className={style["header__button"]}><NavLink to='/basket'>Корзина <span>{this.props.count > 0 && `(${this.props.count})`}</span></NavLink></button>
                         </div>

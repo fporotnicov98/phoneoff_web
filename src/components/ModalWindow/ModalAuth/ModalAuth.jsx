@@ -74,8 +74,7 @@ class ModalAuth extends React.Component {
         this.setState({passwordLog:e.target.value})
     }
     onSubmitLog = (e) =>{
-        // this.props.setLogin(this.state.emailLog,this.state.passwordLog)
-        this.props.getAuth()
+        this.props.setLogin(this.state.emailLog,this.state.passwordLog)
         e.preventDefault();
       }
 
