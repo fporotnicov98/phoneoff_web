@@ -19,7 +19,7 @@ const Product = (props) => {
                     <div class="product__header">
                         <div class="product__title">Мобильный телефон {props.product.Name}</div>
                         <div class="product__buttons">
-                            <button class="product__button-compare" onClick={() => props.addToCompare(props.product)}>Сравнить</button>
+                            <NavLink to='/compare'><button class="product__button-compare" onClick={() => props.compare.length <= 1 ? props.addToCompare(props.product) : alert("Уже сравнивается два товара")}>Сравнить</button></NavLink>
                         </div>
                     </div>
                     <div class="product__body">

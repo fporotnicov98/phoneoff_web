@@ -1,49 +1,22 @@
 import React from 'react'
 import './Order.scss'
 
-const Order = () => {
+const Order = (props) => {
     return (
         <div className="information__order">
             <div className="information__title">Мои заказы</div>
             <div className="order__row">
                 <div className="order__body">
                     <form action="" className="order__form">
+                        {
+                            props.orders.map(order => 
                         <div className="order__info">
-                            <p className="order__number">1</p>
-                            <label for="" className="order__label">Название товара</label>
+                            <p className="order__number">№</p>
+                            <label for="" className="order__label">{order.idOrder}</label>
                             <label for="" className="order__price">69990р</label>
-                            <label for="" className="order__status">Статус заказа</label>
+                            <label for="" className="order__status">{order.status}</label>
                         </div>
-                        <div className="order__info">
-                            <p className="order__number">2</p>
-                            <label for="" className="order__label">Название товара</label>
-                            <label for="" className="order__price">69990р</label>
-                            <label for="" className="order__status">Статус заказа</label>
-                        </div>
-                        <div className="order__info">
-                            <p className="order__number">3</p>
-                            <label for="" className="order__label">Название товара</label>
-                            <label for="" className="order__price">69990р</label>
-                            <label for="" className="order__status">Статус заказа</label>
-                        </div>
-                        <div className="order__info">
-                            <p className="order__number">4</p>
-                            <label for="" className="order__label">Название товара</label>
-                            <label for="" className="order__price">69990р</label>
-                            <label for="" className="order__status">Статус заказа</label>
-                        </div>
-                        <div className="order__info">
-                            <p className="order__number">5</p>
-                            <label for="" className="order__label">Название товара</label>
-                            <label for="" className="order__price">69990р</label>
-                            <label for="" className="order__status">Статус заказа</label>
-                        </div>
-                        <div className="order__info">
-                            <p className="order__number">6</p>
-                            <label for="" className="order__label">Название товара</label>
-                            <label for="" className="order__price">69990р</label>
-                            <label for="" className="order__status">Статус заказа</label>
-                        </div>
+                            )}
                     </form>
                 </div>
             </div>

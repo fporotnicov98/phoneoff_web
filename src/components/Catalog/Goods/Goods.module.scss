@@ -64,9 +64,9 @@
 			font-size: 35px;
 		}
 	}
-	button {
-		background: #e0e0e0;
-		box-shadow: 0 2px 0 3px #919191, 0 0 0 1px #e3e4e8;
+	i {
+		// background: #e0e0e0;
+		// box-shadow: 0 2px 0 3px #919191, 0 0 0 1px #e3e4e8;
 		border-radius: 7px;
 		width: 54px;
 		height: 31px;
@@ -78,7 +78,7 @@
 			transform: translateY(3px);
 		}
 		&:hover {
-			background: #e0e0e0;
+			// background: #e0e0e0;
 			i {
 				color: #000;
 			}

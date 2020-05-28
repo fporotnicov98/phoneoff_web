@@ -52,7 +52,7 @@ class Header extends React.Component {
                                 onClose={() => this.closeModal()}
                             />
 
-                            <button id='compare' className={style["header__button"]}><NavLink to='/compare'> {/* Сравнение */} <img src={compare} alt=""/></NavLink>{this.props.countCompare > 0 && <span className={style['compare']}>{`${this.props.countCompare}`}</span>}</button>
+                            <button id='compare' className={style["header__button"]}><NavLink to='/compare'> {/* Сравнение */} <img src={compare} alt=""/></NavLink></button>
                             <button id='basket' className={style["header__button"]}><NavLink to='/basket'> {/* Корзина */} <i class="fas fa-shopping-cart"></i></NavLink>{this.props.count > 0 && <span className={style['basket']}>{`${this.props.count}`}</span>}</button>
                             {this.props.isAuth === true
                                 ? <button id='sign-out' onClick={() => this.props.logout()} className={style["header__button"]}> {/* Выйти */} <i class="fas fa-sign-out-alt"></i></button>

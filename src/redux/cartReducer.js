@@ -16,6 +16,11 @@ const cartReducer = (state = init, action) => {
                 ...state,
                 items: state.items.filter(o => o.Id !== action.payload)
             };
+        case "REMOVE_ALL_FROM_CART":
+            return {
+                ...state,
+                items: []
+            };
         case 'REMOVE_PROD_FROM_CART':
             let index = state.items.findIndex(obj => obj.Id === action.payload);
             let filtered = state.items.filter(obj => obj.Id === action.payload);
@@ -36,6 +41,7 @@ const cartReducer = (state = init, action) => {
 export const addToCart = product => ({ type: 'ADD_TO_CART', payload: product });
 export const removeFromCart = id => ({ type: 'REMOVE_FROM_CART', payload: id });
 export const removeProdFromCart = id => ({ type: 'REMOVE_PROD_FROM_CART', payload: id });
+export const removeAllFromCart = () => ({ type: 'REMOVE_ALL_FROM_CART' })
 
 export const addOrder = (prodId, userId, date, count) => dispatch => {
     API.addOrder(prodId, userId, date, count)

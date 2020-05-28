@@ -7,6 +7,11 @@ let initial = {
     email: null,
     isAuth: false,
     token: null,
+    fio:null,
+    address:null,
+    phoneNumber: null,
+    login:null,
+    orders:[]
 }
 const authReducer = (state = initial, action) => {
     switch (action.type) {
@@ -20,27 +25,33 @@ const authReducer = (state = initial, action) => {
                 ...state,
                 token: action.payload
             }
+            case "SET_ORDERS":
+                return {
+                    ...state,
+                    orders: action.payload
+                }
         default:
             return state;
 
     }
 }
 
-export const setAuthData = (email, isAuth) => ({ type: "SET_AUTH_DATA", payload: { email, isAuth } })
+export const setAuthData = (email, isAuth, fio, address,phoneNumber,login) => ({ type: "SET_AUTH_DATA", payload: { email, isAuth, fio, address,phoneNumber,login } })
 export const setToken = (token) => ({ type: "SET_TOKEN", payload: token })
+export const setOrders= (orders) => ({ type: "SET_ORDERS", payload: orders })
 
 export const getAuth = (token) => (dispatch) => {
     API.getAuth(token)
         .then(response => {
             if (response.data.resultCode === 0) {
-                dispatch(setAuthData(response.data.email, true))
+                dispatch(setAuthData(response.data.email, true,response.data.fio,response.data.address,response.data.phoneNumber,response.data.login))
             }
         })
 }
 export const getOrder = (token) => (dispatch) => {
     API.getOrder(token)
         .then(response => {
-            return response
+            dispatch(setOrders(response.data))
         })
 }
 export const setLogin = (email, password) => dispatch => {

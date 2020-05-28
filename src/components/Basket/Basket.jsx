@@ -1,6 +1,6 @@
 import React from 'react'
 import style from './Basket.module.scss'
-import { NavLink } from 'react-router-dom'
+import { NavLink} from 'react-router-dom'
 
 
 const Basket = (props) => {
@@ -32,7 +32,14 @@ const Basket = (props) => {
             }
             <div className={style.checkout}>
                 <div className={style.summary}>Итого {props.count} товаров на сумму: {props.totalPrice} р</div>
-                <button className={style.btn__check} onClick={() => props.addOrder(props.itemsId, props.email, date, props.totalPrice)}>Оформить заказ</button>
+                <button className={style.btn__check} disabled = {!props.items.length} onClick={() => {
+                    if (props.isAuth === true){
+                    props.addOrder(props.itemsId, props.email, date, props.totalPrice) 
+                    props.removeAllFromCart()
+                    alert("Заказ оформлен")
+                    } else  alert("Вы неавторизованны") 
+
+                    }}>Оформить заказ</button>
             </div>
         </div>
     )

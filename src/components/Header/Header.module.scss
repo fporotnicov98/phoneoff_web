@@ -63,7 +63,7 @@ $orange: #d99d61;
 
 .header__button {
 	flex: 0 1 75px;
-	height: 75px;
+	height: 65px;
 	color: #282a2d;
 	padding: 15px;
 	border-radius: 50%;
@@ -85,10 +85,10 @@ $orange: #d99d61;
 		color: #fff;
 		border: 2px solid #fff;
 		position: relative;
-		top: -51px;
+		top: -46px;
 		right: -15px;
 		width: 23px;
-		height: 23px;
+		height: 22px;
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -111,11 +111,11 @@ $orange: #d99d61;
 		border-radius: 50%;
 	}
 	img {
-		width: 39px;
+		width: 26px;
 	}
 	i {
 		color: #000;
-		font-size: 2.9em;
+		font-size: 2.2em;
 	}
 	&:hover,
 	&:active,
