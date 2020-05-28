@@ -10,6 +10,7 @@ const mapStateToProps = (state) => {
     return {
         searchQuery: state.filter.searchQuery,
         count: state.cart.items.length,
+        countCompare: state.comparePage.items.length,
         isAuth: state.auth.isAuth,
     }
 }

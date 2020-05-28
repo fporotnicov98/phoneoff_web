@@ -55,7 +55,7 @@ const Product = (props) => {
                                     <div class="basket__price">Цена: {props.product.Cost} руб</div>
                                     {
                                         props.cart.some(item => item.Id === props.product.Id)
-                                            ? <i className="basket__in">В корзине</i>
+                                            ? <div className='check'><i class="fas fa-check"></i></div>
                                             : <button onClick={() => props.addToCart(props.product)} className="basket__btn">Добавить в корзину</button>
                                     }
                                 </div>
