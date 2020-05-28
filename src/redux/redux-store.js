@@ -9,13 +9,14 @@ import authReducer from "./authReducer";
 
 
 
+
 let redusers = combineReducers({
     catalogPage: goodsReducer,
     productPage: productReducer,
     filter: filterReducer,
     cart: cartReducer,
     comparePage: compareReducer,
-    auth:authReducer
+    auth:authReducer,
 })
 
 let store = createStore(redusers,applyMiddleware(thunkMiddleware));

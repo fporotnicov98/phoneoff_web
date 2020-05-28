@@ -32,7 +32,7 @@ const Basket = (props) => {
             }
             <div className={style.checkout}>
                 <div className={style.summary}>Итого {props.count} товаров на сумму: {props.totalPrice} р</div>
-                <button className={style.btn__check} onClick={() => props.addOrder(props.itemsId, 1, date, props.totalPrice)}>Оформить заказ</button>
+                <button className={style.btn__check} onClick={() => props.addOrder(props.itemsId, props.email, date, props.totalPrice)}>Оформить заказ</button>
             </div>
         </div>
     )
