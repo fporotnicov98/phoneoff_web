@@ -15,6 +15,11 @@ const authReducer = (state = initial, action) => {
                 ...state,
                 ...action.payload
             }
+        case "SET_TOKEN":
+            return{
+                ...state,
+                token: action.payload
+            }
         default:
             return state;
 
@@ -28,8 +33,14 @@ export const getAuth = (token) => (dispatch) => {
     API.getAuth(token)
         .then(response => {
             if (response.data.resultCode === 0) {
-                dispatch(setAuthData(response.data.name, true))
+                dispatch(setAuthData(response.data.email, true))
             }
+        })
+}
+export const getOrder = (token) => (dispatch) => {
+    API.getOrder(token)
+        .then(response => {
+            return response
         })
 }
 export const setLogin = (email, password) => dispatch => {

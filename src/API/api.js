@@ -14,8 +14,8 @@ const API = {
     getProduct(productId){
         return instanse.get(`GetPhone/?id=${productId}`)
     }, 
-    addOrder(prodId,userId,date,price){
-        return instanse.post(`addOrder`, {prodId,userId,date,price})
+    addOrder(prodId,email,date,price){
+        return instanse.post(`addOrder`, {prodId,email,date,price})
     },
     addRegData(email,login,password,fio,address,phoneNumber){
         return instanse.post(`Registration`, {email,login,password,fio,address,phoneNumber} )
@@ -25,6 +25,9 @@ const API = {
     },
     getAuth(token){
         return instanse.get(`Auth`,{ headers: {"Authorization" : `Bearer ${token}`} })
+    },
+    getOrder(token){
+        return instanse.get('GetOrder',{ headers: {"Authorization" : `Bearer ${token}`} })
     }
     
 }
