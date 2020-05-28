@@ -21,7 +21,7 @@ const Goods = (props) => {
                                     <div className={style.price}>{phone.Cost} руб</div>
                                     <div className={style.basket}>
                                         {
-                                            phone.some(item => item.Id === props.product.Id)
+                                            props.cart.some(item => item.Id === phone.Id)
                                                 ? <div><i class="fas fa-check"></i></div>
                                                 : <button onClick={() => props.addToCart(phone)}><i className="fas fa-shopping-cart basket-ico"></i></button>
                                         }

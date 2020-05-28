@@ -27,6 +27,7 @@ class GoodsContainer extends React.Component {
 const mapStateToProps = (state) => {
     return {
         filterPhones: state.catalogPage.phones && searchPhones(state.catalogPage.phones, state.filter.filterBy, state.filter.searchQuery),
+        cart:state.cart.items,
     }
 }
 
