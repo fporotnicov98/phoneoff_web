@@ -31,7 +31,7 @@ const Basket = (props) => {
                 </div>)
             }
             <div className={style.checkout}>
-                <div className={style.summary}>Итого {props.count} товаров на сумму: {props.totalPrice} р</div>
+                <div className={style.summary}>Итого {props.count} товара(ов) на сумму: {props.totalPrice} р</div>
                 <button className={style.btn__check} disabled = {!props.items.length} onClick={() => {
                     if (props.isAuth === true){
                     props.addOrder(props.itemsId, props.email, date, props.totalPrice) 

@@ -11,9 +11,9 @@ const Order = (props) => {
                         {
                             props.orders.map(order => 
                         <div className="order__info">
-                            <p className="order__number">№</p>
+                            <p className="order__number">№ </p>
                             <label for="" className="order__label">{order.idOrder}</label>
-                            <label for="" className="order__price">69990р</label>
+                            <label for="" className="order__price">{order.summa} руб.</label>
                             <label for="" className="order__status">{order.status}</label>
                         </div>
                             )}
