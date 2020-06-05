@@ -14,7 +14,7 @@ const Order = (props) => {
                             <p className="order__number">№ </p>
                             <label for="" className="order__label">{order.idOrder}</label>
                             <label for="" className="order__price">{order.summa} руб.</label>
-                            <label for="" className="order__status">{order.status}</label>
+                            <label for="" className="order__status" style = {order.status === "Принято" ? {color: "red"} : {color: "green"}}>{order.status}</label>
                         </div>
                             )}
                     </form>
