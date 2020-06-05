@@ -7,9 +7,9 @@ import SortFilterContainer from './SortFilterContainer/SortFilterContainer'
 const Catalog = () => {
     return (
         <div className={style.catalog__row}>
-            <div className={style.catalog__minBlock}>
+            {/* <div className={style.catalog__minBlock}>
                 <Filter />
-            </div>
+            </div> */}
             <div className={style.catalog__maxBlock}>
                 <SortFilterContainer />
                 <GoodsContainer />
