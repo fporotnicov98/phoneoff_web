@@ -2,7 +2,7 @@ import React from 'react'
 import style from './ModalAuth.module.scss'
 import $ from 'jquery'
 import { findDOMNode } from 'react-dom';
-import { setRegistration, setLogin, getAuth,getCode } from '../../../redux/authReducer'
+import { setRegistration, setLogin, getAuth, getCode } from '../../../redux/authReducer'
 import { connect } from 'react-redux';
 import { Redirect } from "react-router-dom";
 import { reduxForm, Field } from 'redux-form';
@@ -37,7 +37,8 @@ class ModalAuth extends React.Component {
             passwordReg: '',
             fio: '',
             address: '',
-            phoneNum: ''
+            phoneNum: '',
+            confirmInput: '',
         };
     }
     clickSwitchingLoginAndRegister() {
@@ -64,6 +65,9 @@ class ModalAuth extends React.Component {
     }
     setEmailReg = (e) => {
         this.setState({ emailReg: e.target.value })
+    }
+    setConfirm = (e) => {
+        this.setState({ confirmInput: e.target.value })
     }
     setPasswordReg = (e) => {
         this.setState({ passwordReg: e.target.value })
@@ -95,8 +99,9 @@ class ModalAuth extends React.Component {
         this.props.setLogin(this.state.emailLog, this.state.passwordLog)
         e.preventDefault();
     }
-    onSubmitConfirm = (formData) =>  {
-        this.props.getCode(formData.code)
+    onSubmitConfirm = (e) => {
+        this.props.getCode(this.state.confirmInput)
+        e.preventDefault();
     }
 
 
@@ -142,12 +147,14 @@ class ModalAuth extends React.Component {
                                     </form>
                                 </div>
                             </div>
-                            : <div ref='frame' className={style["frame"] + " " + style['frame-short']}>
+                            :
+                            <div ref='frame' className={style["frame"]}>
                                 <button onClick={e => this.close(e)} className={style["close-auth"]}>&times;</button>
-                                <div className={style['confirm']}>
-                                    <div className={style['title']}>Подтверждение регистрации</div>
-                                    <ConfirmFormRedux onSubmit={this.onSubmitConfirm} />
-                                </div>
+                                <form ref='signin' className={style["form-signin"]} onSubmit={this.onSubmitConfirm} >
+                                    <label for="email">Введите код регистрации  </label>
+                                    <input className={style["form-styling"]} id='confirm' required='required' type="text" name="confirm" value={this.state.confirmInput} onChange={this.setConfirm} />
+                                    <input className={style["btn-signin"]} type="submit" value="Подтвердить"></input>
+                                </form>
                             </div>
                     }
 
@@ -171,4 +178,4 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps, { setRegistration, setLogin, getAuth,getCode })(ModalAuth)
+export default connect(mapStateToProps, { setRegistration, setLogin, getAuth, getCode })(ModalAuth)

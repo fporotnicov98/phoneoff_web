@@ -1,4 +1,6 @@
 import API from '../API/api'
+import { Redirect } from 'react-router-dom'
+import React from 'react'
 
 
 
@@ -70,6 +72,7 @@ export const getCode = (code) => dispatch => {
     API.getCode(code)
         .then(response => {
             alert("Регистрация прошла успешно!")
+            return <Redirect to={'/'}></Redirect>
         })
         .catch(err => {
         })
