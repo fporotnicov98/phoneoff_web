@@ -17,8 +17,8 @@ const API = {
     addOrder(prodId,email,date,price){
         return instanse.post(`addOrder`, {prodId,email,date,price})
     },
-    addRegData(email,login,password,fio,address,phoneNumber){
-        return instanse.post(`Registration`, {email,login,password,fio,address,phoneNumber} )
+    sendMail(email,login,password,fio,address,phoneNumber){
+        return instanse.post(`SendMail`, {email,login,password,fio,address,phoneNumber} )
     },
     login(email,password){
         return instanse.post(`Authentication`, {email,password})
@@ -28,7 +28,10 @@ const API = {
     },
     getOrder(token){
         return instanse.get('GetOrder',{ headers: {"Authorization" : `Bearer ${token}`} })
-    }
+    },
+    getCode(code){
+        return instanse.get(`CodeRegistration?code=${code}`)
+    },
     
 }
 export default API

@@ -2,7 +2,7 @@ import React from 'react'
 import style from './ModalAuth.module.scss'
 import $ from 'jquery'
 import { findDOMNode } from 'react-dom';
-import { setRegistration, setLogin, getAuth } from '../../../redux/authReducer'
+import { setRegistration, setLogin, getAuth,getCode } from '../../../redux/authReducer'
 import { connect } from 'react-redux';
 import { Redirect } from "react-router-dom";
 import { reduxForm, Field } from 'redux-form';
@@ -95,6 +95,9 @@ class ModalAuth extends React.Component {
         this.props.setLogin(this.state.emailLog, this.state.passwordLog)
         e.preventDefault();
     }
+    onSubmitConfirm = (formData) =>  {
+        this.props.getCode(formData.code)
+    }
 
 
     render() {
@@ -168,4 +171,4 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps, { setRegistration, setLogin, getAuth })(ModalAuth)
+export default connect(mapStateToProps, { setRegistration, setLogin, getAuth,getCode })(ModalAuth)

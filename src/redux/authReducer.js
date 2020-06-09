@@ -64,7 +64,15 @@ export const setLogin = (email, password) => dispatch => {
         })
 }
 export const setRegistration = (email, login, password, fio, address, phoneNumber) => dispatch => {
-    API.addRegData(email, login, password, fio, address, phoneNumber)
+    API.sendMail(email, login, password, fio, address, phoneNumber)
+}
+export const getCode = (code) => dispatch => {
+    API.getCode(code)
+        .then(response => {
+            alert("Регистрация прошла успешно!")
+        })
+        .catch(err => {
+        })
 }
 export const logout = () => dispatch => {
     dispatch(setAuthData(null, false))
